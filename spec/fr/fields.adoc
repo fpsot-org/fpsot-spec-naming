@@ -19,6 +19,9 @@ Les personnes et les outils trouvent alors chaque identifiant et chaque lien par
 *NAM-041.* Un champ qui contient un instant DEVRAIT se terminer par `At`, comme `createdAt`.
 Un champ qui contient une date de calendrier DEVRAIT se terminer par `Date`, comme `birthDate`.
 Le suffixe indique le genre de valeur avant la lecture du schéma.
+Un type commun d'une autre spécification FPSOT garde ses noms de champs, comme `start` et `end` d'un intervalle.
+Cela l'emporte aussi sur l'exigence NAM-008, même si certains langages réservent le mot `end`.
+Ces champs portent alors les mêmes noms dans chaque interface.
 
 == Noms déclarés
 

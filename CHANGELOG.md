@@ -16,5 +16,5 @@ and versions follow [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.h
 - Paths NAM-030 to NAM-034, fields NAM-040 to NAM-043 and events NAM-050 to NAM-052.
 - Code lists NAM-060 and NAM-061, and files NAM-070 and NAM-071.
 - Stability NAM-080 to NAM-084.
-- Comparison with the international baseline, Canada and Québec.
+- Comparison with the international baseline and Canada.
 - An explanation guide and a how-to guide in each language.

@@ -6,44 +6,44 @@ description: Naming rules for identifiers that machines read in FPSOT projects. 
 # FPSOT naming
 
 Summary of the FPSOT naming specification. It adds no rules of its own.
-The spec text in `spec/` wins on any difference. Each line cites its requirement ID.
+The spec text in `spec/` wins on any difference. Each line cites its requirement ID and keeps its strength: must, should or may.
 
 ## Every name
 
-- Names are in English. People see translated labels, never the name (NAM-001).
-- Use the English term of the writing term base, in the case style of the context (NAM-002). One concept, one name (NAM-003).
-- Only ASCII letters, digits and the separator of the case style. Start with a letter (NAM-004).
-- No shortened words. Only term base abbreviations and `id` (NAM-005).
-- Canadian spelling, such as `licence` and `colour` (NAM-006). Names from outside standards keep their exact form, such as `CAD` or `license` in `publiccode.yml` (NAM-007).
-- Avoid reserved words such as `class` or `default` (NAM-008). At most 63 characters, ideally 4 words or fewer (NAM-009).
+- Names must be in English. People see translated labels, never the name (NAM-001).
+- Names must use the English term of the writing term base, in the case style of the context (NAM-002). One concept must have one name (NAM-003).
+- Names must use only ASCII letters, digits and the separator of the case style, and must start with a letter (NAM-004).
+- Names must not shorten words. They may use term base abbreviations and `id` (NAM-005).
+- Names must use Canadian spelling, such as `licence` and `colour` (NAM-006). Names from outside standards must keep their exact form, such as `CAD` or `license` in `publiccode.yml` (NAM-007).
+- Names should not be reserved words such as `class` or `default` (NAM-008). Names must have at most 63 characters, and should have 4 words or fewer (NAM-009).
 
 ## Case and word form
 
-- lowerCamelCase: JSON fields, query parameters, path variables. kebab-case: path segments, code values, event type segments, artifactIds, repositories, files (NAM-010).
-- Abbreviations are ordinary words: `apiKey`, `userId` (NAM-011). No word starts with a digit (NAM-012).
-- Plural for lists and collections, singular for one item (NAM-013). Nouns, not verbs (NAM-014).
-- Booleans without `is` or `has` (NAM-015). No prepositions, except the `At` suffix (NAM-016).
-- Compare names with case. No two names that differ only by case or separators (NAM-017).
+- Case style must follow the context. lowerCamelCase: JSON fields, query parameters, path variables. kebab-case: path segments, code values, event type segments, artifactIds, repositories, files (NAM-010).
+- Abbreviations must be ordinary words: `apiKey`, `userId` (NAM-011). No word may start with a digit (NAM-012).
+- Lists and collections must be plural, one item must be singular (NAM-013). Field names and path segments should be nouns, not verbs (NAM-014).
+- Booleans should drop `is` or `has` (NAM-015). Names should not contain prepositions, except the suffixes `At`, and `From` and `To` for range filters, such as `createdAtFrom` (NAM-016).
+- Tools must compare names with case. Two names must not differ only by case or separators (NAM-017).
 
 ## Repositories and packages
 
-- Repositories: `fpsot-<kind>-<topic>`, kind `spec`, `library`, `service`, `tool` or `website` (NAM-020).
-- Packages: `org.fpsot.<topic>`, words joined, lower case, no underscores (NAM-021). Module name = main package (NAM-022).
-- Maven: `groupId` `org.fpsot.<topic>`, `artifactId` `fpsot-…` in kebab-case (NAM-023).
+- Repositories must be `fpsot-<kind>-<topic>`, kind `spec`, `library`, `service`, `tool` or `website` (NAM-020).
+- Packages must be `org.fpsot.<topic>`, words joined, lower case, no underscores (NAM-021). The module name should be the main package (NAM-022).
+- Maven: `groupId` must be `org.fpsot.<topic>`, `artifactId` must be `fpsot-…` in kebab-case (NAM-023).
 
 ## Paths, fields, events, code lists, files
 
-- Path segments in kebab-case, collections plural (NAM-030). Path variables in lowerCamelCase, named like the referring field (NAM-031).
-- No file extension, software name, person's name or status in a path (NAM-032). Identify by an opaque identifier, not by name (NAM-033).
-- Language versions share path segments; a language tag segment may mark the language (NAM-034).
-- Own identifier `id`, references `<resource>Id`, lists `<resource>Ids` (NAM-040). Instants end with `At`, dates with `Date` (NAM-041).
-- Declare every field. No keys taken from data, except language tags or declared code values (NAM-042). Do not repeat the parent name (NAM-043).
-- Event types: `org.fpsot.<domain>.<resource>.<event>`, singular resource, past-tense event (NAM-050, NAM-051). Extension attributes: lower-case letters and digits, 20 characters at most (NAM-052).
-- Code values in kebab-case English, always strings, never numbers. Codes from another issuer, such as `CAD` or `CA`, keep the issuer's form (NAM-060). Each value has an English and a French label (NAM-061).
-- Files in kebab-case English, same name in every language folder (NAM-070). Diagram output shares the base name of its source (NAM-071).
+- Path segments must be kebab-case, collections plural (NAM-030). Path variables must be lowerCamelCase, and should be named like the referring field (NAM-031).
+- Paths must not hold a file extension, software name, person's name or status (NAM-032). Paths must identify by an opaque identifier, not by name (NAM-033).
+- Language versions must share path segments; a language tag segment may mark the language (NAM-034).
+- The own identifier must be `id`, references `<resource>Id`, lists `<resource>Ids` (NAM-040). Instants should end with `At`, dates with `Date`. A name that another FPSOT specification fixes in a shared type, such as `start` and `end` of an interval, keeps that name (NAM-041).
+- Every field must be declared. Keys must not come from data, but may be language tags or declared code values (NAM-042). Field names should not repeat the parent name (NAM-043).
+- Event types must be `org.fpsot.<domain>.<resource>.<event>`, with a singular resource and a past-tense event (NAM-050, NAM-051). Extension attributes must use lower-case letters and digits, 20 characters at most (NAM-052).
+- Code values must be kebab-case English strings, never numbers. Codes from another issuer, such as `CAD` or `CA`, must keep the issuer's form (NAM-060, NAM-007). Each value must have an English and a French label (NAM-061).
+- Files must be kebab-case English, with the same name in every language folder (NAM-070). Diagram output must share the base name of its source (NAM-071).
 
 ## Stability
 
-- No published name changes or disappears within a major version (NAM-080). Minor versions may add names, and growing code lists say so (NAM-081).
-- Never reuse a removed name with a new meaning (NAM-082). Published page addresses keep working or redirect permanently (NAM-083).
-- Do not rename repositories, and never give an old name to another project (NAM-084).
+- A published name must not change or disappear within a major version (NAM-080). Minor versions may add names, and growing code lists must say so (NAM-081).
+- A removed name must not come back with a new meaning (NAM-082). Published page addresses must keep working or redirect permanently (NAM-083).
+- Projects should not rename repositories. An old name must not go to another project (NAM-084).

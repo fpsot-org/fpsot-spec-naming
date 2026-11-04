@@ -64,7 +64,9 @@ Le nom dans les données différerait alors du nom dans le code.
 [[NAM-016]]
 *NAM-016.* Un nom NE DEVRAIT PAS contenir de préposition, comme `of`, `for` ou `by`.
 Écrivez `ownerName` plutôt que `nameOfOwner`.
-Le suffixe `At` de l'exigence NAM-041 est la seule exception.
+Les exceptions sont le suffixe `At` de l'exigence NAM-041, et les suffixes `From` et `To` des filtres sur un intervalle.
+Ils suivent le nom du champ : `<field>From` inclut la borne et `<field>To` l'exclut, comme `createdAtFrom` et `createdAtTo`.
+Ces suffixes sont courts et courants dans les paramètres de requête, et ils gardent le nom du champ entier.
 Les noms sans préposition sont plus courts et concordent plus souvent d'une interface à l'autre.
 
 [[NAM-017]]

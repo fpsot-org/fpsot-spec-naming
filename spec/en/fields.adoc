@@ -19,6 +19,9 @@ Readers and tools then find every identifier and every link by its name.
 *NAM-041.* A field that holds an instant SHOULD end with `At`, such as `createdAt`.
 A field that holds a calendar date SHOULD end with `Date`, such as `birthDate`.
 The suffix tells the reader the kind of value before they read the schema.
+A shared type of another FPSOT specification keeps its field names, such as `start` and `end` of an interval.
+This also overrides NAM-008, although some languages reserve the word `end`.
+These fields then have the same names in every interface.
 
 == Declared names
 

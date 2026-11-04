@@ -64,7 +64,9 @@ The name in the data would then differ from the name in the code.
 [[NAM-016]]
 *NAM-016.* A name SHOULD NOT contain a preposition, such as `of`, `for` or `by`.
 Write `ownerName`, not `nameOfOwner`.
-The suffix `At` of NAM-041 is the one exception.
+The exceptions are the suffix `At` of NAM-041, and the suffixes `From` and `To` of range filters.
+They follow the field name: `<field>From` includes the bound and `<field>To` excludes it, such as `createdAtFrom` and `createdAtTo`.
+These suffixes are short and common in query parameters, and they keep the field name whole.
 Names without prepositions are shorter, and they match more often across interfaces.
 
 [[NAM-017]]
