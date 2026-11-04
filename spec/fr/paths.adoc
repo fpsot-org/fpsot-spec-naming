@@ -1,0 +1,51 @@
+= Chemins
+include::_fpsot-terms.adoc[]
+
+Ces règles nomment les parties d'une {abbr-uri-first} que la {abbr-fpsot-first} définit.
+Le schéma et l'hôte suivent les règles de leurs registres.
+
+== Segments de chemin
+
+[[NAM-030]]
+*NAM-030.* Un segment de chemin qu'un projet définit DOIT être en kebab-case.
+Un segment qui nomme une collection DOIT être un nom commun au pluriel.
+Par exemple : `/v1/assets/{assetId}/entitlements`.
+Le chemin tient compte de la casse, alors que le schéma et l'hôte n'en tiennent pas compte.
+Les minuscules partout évitent des liens qui ne diffèrent que par la casse.
+Le trait d'union est un caractère non réservé, et il n'a donc jamais besoin d'être codé.
+
+[[NAM-031]]
+*NAM-031.* Une variable de gabarit de chemin DOIT être en lowerCamelCase.
+Elle DEVRAIT porter le nom du champ qui renvoie à cette ressource, comme `{assetId}`.
+La même valeur porte alors le même nom dans le chemin et dans les données.
+
+== Contenu d'un chemin
+
+[[NAM-032]]
+*NAM-032.* Un chemin NE DOIT PAS contenir d'extension de nom de fichier ni le nom du logiciel qui le sert.
+Il NE DOIT PAS contenir le nom d'une personne ni un état, comme `draft` ou `old`.
+Ces faits changent alors que la ressource reste la même.
+Un chemin qui les contient doit alors changer, et chaque lien vers lui se brise.
+
+[[NAM-033]]
+*NAM-033.* Un chemin DOIT désigner une ressource par son identifiant, pas par un nom ou un libellé qui peut changer.
+Écrivez `/parties/{partyId}`, jamais le nom de la partie.
+L'identifiant est opaque et ne contient aucun renseignement personnel, géographique ou d'affaires.
+Les noms et les libellés changent, et ils diffèrent d'une langue à l'autre.
+Un nom dans un chemin ferait aussi passer des renseignements personnels dans les journaux.
+
+[[NAM-034]]
+*NAM-034.* Les versions linguistiques d'une même ressource DOIVENT partager les mêmes segments de chemin.
+Un premier segment qui contient une étiquette de langue, comme `/fr/`, PEUT indiquer la langue.
+Les personnes et les outils peuvent alors changer de langue en modifiant un seul segment.
+Les adresses courtes des campagnes imprimées ou radio sont des libellés pour les personnes.
+Cette spécification ne les couvre pas.
+Elles redirigent vers une adresse qui suit ces règles.
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-04 |Première version.
+|===

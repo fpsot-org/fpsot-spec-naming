@@ -1,15 +1,36 @@
-= Guide
+= Naming guide
 :page-type: explanation
 include::_fpsot-terms.adoc[]
 
-This page explains the specification for the people who adopt it.
-Each guide page has one type.
-It is a tutorial, a how-to guide, a reference or an explanation.
+This guide explains the {abbr-fpsot-first} naming specification for the teams that adopt it.
+
+== Why names stay in English
+
+A name is part of a contract between programs.
+Code, stored data and logs all repeat it.
+If each language had its own name, every interface would need two versions, and they would drift apart.
+
+People never need to see a name.
+A screen shows a label instead, in the language of the reader.
+The label comes from the code list or the interface text, and a translator can improve it at any time.
+The name stays the same for the whole major version.
+
+== Where the words come from
+
+The writing specification keeps a term base in English and in French.
+A name takes the English term of an entry.
+The screen shows the term in the language of the reader.
+For example, the field `assetId` shows the label "Asset" in English and "Bien" in French.
+
+== What to read next
+
+* xref:choose-a-name.adoc[Choose a name] gives the steps for a new name.
+* The normative text is in `spec/en/`.
 
 == Document history
 
 [cols="1,1,4",options="header"]
 |===
 |Version |Date |Change
-|0.1.0 |2026-11-03 |First version.
+|0.1.0 |2026-11-04 |First version.
 |===

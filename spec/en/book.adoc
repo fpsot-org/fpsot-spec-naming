@@ -1,7 +1,25 @@
-= Specification title
+= FPSOT naming specification
 :doctype: book
 :toc:
 
 include::index.adoc[leveloffset=+1]
+
+include::principles.adoc[leveloffset=+1]
+
+include::case.adoc[leveloffset=+1]
+
+include::repositories.adoc[leveloffset=+1]
+
+include::paths.adoc[leveloffset=+1]
+
+include::fields.adoc[leveloffset=+1]
+
+include::events.adoc[leveloffset=+1]
+
+include::code-lists.adoc[leveloffset=+1]
+
+include::files.adoc[leveloffset=+1]
+
+include::stability.adoc[leveloffset=+1]
 
 include::glossary.adoc[leveloffset=+1]

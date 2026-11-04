@@ -1,16 +1,37 @@
-= Guide
-:translation-status: pending
+= Guide du nommage
 :page-type: explanation
 include::_fpsot-terms.adoc[]
 
-Cette page explique la spécification aux personnes qui l’adoptent.
-Chaque page de guide a un seul type.
-C’est un tutoriel, un guide pratique, une référence ou une explication.
+Ce guide explique la spécification de nommage de la {abbr-fpsot-first} aux équipes qui l'adoptent.
+
+== Pourquoi les noms restent en anglais
+
+Un nom fait partie d'un contrat entre des programmes.
+Le code, les données stockées et les journaux le répètent tous.
+Si chaque langue avait son propre nom, chaque interface aurait besoin de deux versions, qui finiraient par diverger.
+
+Les personnes n'ont jamais besoin de voir un nom.
+Un écran affiche plutôt un libellé, dans la langue de la personne.
+Le libellé vient de la liste de codes ou du texte de l'interface.
+Une personne traductrice peut l'améliorer en tout temps.
+Le nom reste le même pendant toute la version majeure.
+
+== D'où viennent les mots
+
+La spécification de rédaction tient une base terminologique en anglais et en français.
+Un nom prend le terme anglais d'une fiche.
+L'écran affiche le terme dans la langue de la personne.
+Par exemple, le champ `assetId` affiche le libellé « Asset » en anglais et « Bien » en français.
+
+== Lectures suivantes
+
+* La page xref:choose-a-name.adoc[Choisir un nom] donne les étapes pour un nouveau nom.
+* Le texte normatif se trouve dans `spec/fr/`.
 
 == Historique du document
 
 [cols="1,1,4",options="header"]
 |===
 |Version |Date |Changement
-|0.1.0 |2026-11-03 |Première version.
+|0.1.0 |2026-11-04 |Première version.
 |===

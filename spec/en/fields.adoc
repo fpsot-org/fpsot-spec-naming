@@ -1,0 +1,46 @@
+= Fields
+include::_fpsot-terms.adoc[]
+
+These rules name the fields of {abbr-json-first} data and the parameters of requests.
+NAM-010 sets their case style.
+
+== Identifiers and references
+
+[[NAM-040]]
+*NAM-040.* The field that holds the identifier of a resource MUST have the name `id`.
+A field that refers to another resource MUST end with `Id`.
+The name starts with the resource or its role, such as `partyId` or `ownerId`.
+A list of such references MUST end with `Ids`, such as `assetIds`.
+Readers and tools then find every identifier and every link by its name.
+
+== Time
+
+[[NAM-041]]
+*NAM-041.* A field that holds an instant SHOULD end with `At`, such as `createdAt`.
+A field that holds a calendar date SHOULD end with `Date`, such as `birthDate`.
+The suffix tells the reader the kind of value before they read the schema.
+A shared type of another FPSOT specification keeps its field names, such as `start` and `end` of an interval.
+This also overrides NAM-008, although some languages reserve the word `end`.
+These fields then have the same names in every interface.
+
+== Declared names
+
+[[NAM-042]]
+*NAM-042.* A schema MUST declare every field name, and a field name MUST NOT come from data values.
+A map MAY use language tags as keys, or the values of a declared code list.
+Its keys then keep the form of those tags or values.
+A client can only read and check the names that a schema declares.
+Keys that come from data also break code generators.
+
+[[NAM-043]]
+*NAM-043.* A field name SHOULD NOT repeat the name of the object that holds it.
+Write `name` inside a party, not `partyName`.
+The object already gives the context, and the shorter name reads better in code.
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-04 |First version.
+|===

@@ -1,0 +1,41 @@
+= Stability
+include::_fpsot-terms.adoc[]
+
+Code and stored data depend on names.
+These rules say when a name may change.
+Version numbers follow Semantic Versioning 2.0.0.
+
+[[NAM-080]]
+*NAM-080.* A published name MUST NOT change or disappear within a major version.
+The rule covers the names of fields, paths and events.
+It also covers the values of code lists, the packages and the Maven coordinates.
+A changed name breaks code and data as surely as a removed one.
+
+[[NAM-081]]
+*NAM-081.* A minor version MAY add a name.
+A code list that can gain values in a minor version MUST say so in its documentation.
+An added name breaks no client that ignores what it does not know.
+A client that knows a list can grow can plan for new values.
+
+[[NAM-082]]
+*NAM-082.* A name that a version removed MUST NOT come back later with a different meaning.
+Old data and old clients would read the new meaning into the old name.
+
+[[NAM-083]]
+*NAM-083.* A {abbr-uri-first} that {abbr-fpsot-first} publishes for a page or a document MUST keep working.
+If the content moves, the old address MUST redirect permanently to the new one.
+Laws, contracts and other sites link to these addresses, and nobody can update all of them.
+
+[[NAM-084]]
+*NAM-084.* A project SHOULD NOT rename a {term-repository}.
+A repository that predates NAM-020 MAY keep its name.
+An old repository name MUST NOT go to another project.
+A rename breaks clones, links and package sources, and a reused name points them at the wrong code.
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-04 |First version.
+|===

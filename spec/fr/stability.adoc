@@ -1,0 +1,42 @@
+= Stabilité
+include::_fpsot-terms.adoc[]
+
+Le code et les données stockées dépendent des noms.
+Ces règles indiquent quand un nom peut changer.
+Les numéros de version suivent Semantic Versioning 2.0.0.
+
+[[NAM-080]]
+*NAM-080.* Un nom publié NE DOIT PAS changer ni disparaître au cours d'une version majeure.
+La règle couvre les noms des champs, des chemins et des événements.
+Elle couvre aussi les valeurs des listes de codes, les paquetages et les coordonnées Maven.
+Un nom modifié brise le code et les données autant qu'un nom retiré.
+
+[[NAM-081]]
+*NAM-081.* Une version mineure PEUT ajouter un nom.
+Une liste de codes qui peut recevoir de nouvelles valeurs dans une version mineure DOIT l'indiquer dans sa documentation.
+Un nom ajouté ne brise aucun client qui ignore ce qu'il ne connaît pas.
+Un client qui sait qu'une liste peut grandir peut prévoir de nouvelles valeurs.
+
+[[NAM-082]]
+*NAM-082.* Un nom qu'une version a retiré NE DOIT PAS revenir plus tard avec un autre sens.
+Les anciennes données et les anciens clients donneraient le nouveau sens à l'ancien nom.
+
+[[NAM-083]]
+*NAM-083.* Une {abbr-uri-first} que la {abbr-fpsot-first} publie pour une page ou un document DOIT continuer de fonctionner.
+Si le contenu change de place, l'ancienne adresse DOIT rediriger de façon permanente vers la nouvelle.
+Des lois, des contrats et d'autres sites renvoient à ces adresses, et personne ne peut tous les mettre à jour.
+
+[[NAM-084]]
+*NAM-084.* Un projet NE DEVRAIT PAS renommer un {term-repository}.
+Un dépôt antérieur à l'exigence NAM-020 PEUT garder son nom.
+Un ancien nom de dépôt NE DOIT PAS passer à un autre projet.
+Un changement de nom brise les clones, les liens et les sources de paquets.
+Un nom réutilisé les dirige vers le mauvais code.
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-04 |Première version.
+|===

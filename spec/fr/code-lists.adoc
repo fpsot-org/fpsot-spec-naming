@@ -1,0 +1,30 @@
+= Listes de codes
+include::_fpsot-terms.adoc[]
+
+Une liste de codes est un ensemble fermé de valeurs codées, comme l'état d'une demande.
+Une énumération dans un schéma ou dans le code est un genre de liste de codes.
+
+[[NAM-060]]
+*NAM-060.* Une valeur codée définie par la {abbr-fpsot-first} DOIT être en kebab-case et employer le terme anglais de son concept.
+Par exemple : `not-covered`.
+Une valeur DOIT être une chaîne, jamais un nombre.
+Un code d'un autre émetteur garde la forme exacte de cet émetteur, selon l'exigence NAM-007.
+Les minuscules et les traits d'union se lisent pareil dans les données, les chemins et les fichiers.
+Les valeurs d'état des comparaisons de la spécification de documentation suivent déjà cette forme.
+
+Voici des exemples de codes externes : `CAD` de la norme {abbr-iso-first} 4217 et `CA` de la norme {abbr-iso} 3166.
+Les noms de fuseaux horaires et les identifiants gouvernementaux en sont d'autres.
+
+[[NAM-061]]
+*NAM-061.* Chaque valeur de liste de codes DOIT avoir un libellé pour les personnes, en anglais et en français.
+Une interface utilisateur DOIT afficher le libellé dans la langue de la personne, jamais la valeur.
+La valeur reste stable selon l'exigence NAM-001.
+Le libellé peut alors s'améliorer sans aucun changement aux données.
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-04 |Première version.
+|===

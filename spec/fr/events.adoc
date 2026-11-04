@@ -1,0 +1,32 @@
+= Événements
+include::_fpsot-terms.adoc[]
+
+Ces règles nomment les types des événements que les produits de la {abbr-fpsot-first} envoient, par exemple avec CloudEvents.
+
+[[NAM-050]]
+*NAM-050.* Un type d'événement que le projet définit DOIT avoir la forme `org.fpsot.<domain>.<resource>.<event>`.
+Chaque segment DOIT être en kebab-case.
+Le domaine est le sujet de la spécification ou du produit qui définit l'événement, comme `registry`.
+Un type d'événement qu'une autre organisation définit DOIT commencer par le nom de domaine inversé de cette organisation.
+Le domaine inversé montre qui définit le sens de l'événement, et sépare les types de deux organisations.
+
+[[NAM-051]]
+*NAM-051.* Le segment de ressource DOIT être un nom commun au singulier.
+Le segment d'événement DOIT être un verbe au participe passé.
+Par exemple : `org.fpsot.registry.asset.transferred`.
+Un événement consigne un fait déjà arrivé à une ressource.
+Le type se lit alors comme une courte phrase.
+
+[[NAM-052]]
+*NAM-052.* Un attribut d'extension CloudEvents que le projet définit DOIT employer seulement des lettres {abbr-ascii-first} minuscules et des chiffres.
+Il DOIT compter 20 caractères ou moins.
+CloudEvents n'admet que ces caractères et conseille cette limite de longueur.
+Certains protocoles qui transportent les événements ignorent la casse des noms d'attributs.
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-04 |Première version.
+|===

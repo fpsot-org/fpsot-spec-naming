@@ -1,30 +1,21 @@
-= FPSOT specification template
+= FPSOT naming specification
 
-This repository is the starting point for an FPSOT specification.
-Create a new repository from it, then replace this text.
-
-== Start a specification
-
-. Set `SPEC_PREFIX` in `.github/workflows/ci.yml` to the three-letter prefix of the requirement IDs.
-. Replace the titles in `spec/`, `docs/antora.yml`, `publiccode.yml`, `AGENTS.md`, `NOTICE` and `skill/SKILL.md`.
-. Replace the example requirement TPL-001 and the example row in `jurisdictions/baseline.yaml`.
-. List each spec page in `spec/<lang>/book.adoc`. The glossary stays the last include.
-
-Each page ends with a document history.
-Each guide page sets `:page-type:` to tutorial, how-to, reference or explanation.
-Write abbreviations and defined terms as `{abbr-…}` and `{term-…}` from the term base of `fpsot-spec-writing`.
-The continuous integration writes `_fpsot-terms.adoc`, the glossaries and the comparison pages. Git ignores them.
+This specification sets how FPSOT projects name the identifiers that machines read.
+It covers repositories, Java and Kotlin packages, Maven coordinates, address paths, JSON fields and query parameters, event types, code lists and file names.
+Names are in English, and people see translated labels.
 
 == Implement this spec
 
 Read the normative text in `spec/en/` or `spec/fr/`.
-Each requirement has an ID, such as `XYZ-001`.
-Check your implementation against every requirement.
+Each requirement has an ID, such as `NAM-001`.
+Check every name you publish against each requirement.
+`skill/SKILL.md` gives a one-page summary.
 
 == Adopt this spec
 
 Read the guides in `docs/modules/en/pages/` or `docs/modules/fr/pages/`.
-They explain what the spec gives your organisation and how to require it.
+They explain why names stay in English and show how to choose a name.
+To require the spec in a contract, cite its version and the requirement IDs.
 
 == Layout
 

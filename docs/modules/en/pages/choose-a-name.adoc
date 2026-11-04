@@ -1,0 +1,48 @@
+= Choose a name
+:page-type: how-to
+include::_fpsot-terms.adoc[]
+
+This guide shows how to choose a name for a field, a path, an event or a code value.
+
+. Find the concept in the term base of the writing specification.
+If it is missing, propose a new entry first.
+
+. Take the English term of the entry, in Canadian spelling.
+
+. Write each word in full.
+Keep only abbreviations from the term base, and `id`.
+
+. Make the name plural if it holds a list or names a collection.
+
+. Apply the case style of the context, from the table in NAM-010.
+
+. Check that the name starts with a letter and uses only letters, digits and its separator.
+
+. Check that the name has 63 characters or fewer, and is not a reserved word.
+
+. Search the published specifications for the same name.
+One name must keep one meaning.
+
+. Add an English and a French label for people.
+
+== Example
+
+The concept "entitlement" is in the term base.
+A list of them under an asset gets these names.
+
+[cols="2,3",options="header"]
+|===
+|Context |Name
+|Path |`/v1/assets/{assetId}/entitlements`
+|Field that refers to one |`entitlementId`
+|Event type |`org.fpsot.registry.entitlement.granted`
+|Label |"Entitlement" in English, "Droit" in French
+|===
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-04 |First version.
+|===

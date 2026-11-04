@@ -1,9 +1,24 @@
-= Titre de la spécification
-:translation-status: pending
+= Spécification FPSOT sur le nommage
 include::_fpsot-terms.adoc[]
 
-Remplacez cette page par le texte normatif de la spécification.
-Commencez par la portée, puis les classes de conformité, puis les exigences.
+Cette spécification fixe comment les projets de la {abbr-fpsot-first} nomment les identifiants que les machines lisent.
+Elle couvre le nom de chaque {term-repository}, de chaque paquetage et de chaque fichier.
+Elle couvre aussi les chemins de chaque {abbr-uri-first}, les champs des données {abbr-json-first} et les paramètres de requête.
+Les types d'événements et les listes de codes complètent la liste.
+Les libellés et les autres textes que les personnes lisent suivent plutôt la spécification de rédaction.
+Les noms internes au code source, comme les classes et les variables, relèveront d'une future spécification sur le code.
+
+La spécification comporte les parties suivantes.
+
+* Les xref:principles.adoc[principes] s'appliquent à tous les noms.
+* La partie xref:case.adoc[Casse et forme des mots] fixe le style de casse de chaque contexte.
+* La partie xref:repositories.adoc[Dépôts et paquetages] couvre les dépôts, les paquetages Java et Kotlin et les coordonnées Maven.
+* La partie xref:paths.adoc[Chemins] couvre la partie chemin de chaque adresse.
+* La partie xref:fields.adoc[Champs] couvre les noms dans les données.
+* La partie xref:events.adoc[Événements] couvre les types d'événements.
+* La partie xref:code-lists.adoc[Listes de codes] couvre les valeurs codées et leurs libellés.
+* La partie xref:files.adoc[Fichiers] couvre les noms de fichiers des dépôts de spécification.
+* La partie xref:stability.adoc[Stabilité] indique quand un nom peut changer.
 
 == Conformité
 
@@ -12,24 +27,16 @@ ____
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 (RFC 2119, RFC 8174) when, and only when, they appear in all capitals, as shown here.
 ____
 
-La version française emploie les mots clés français de la spécification de rédaction de la {abbr-fpsot-first}, à l'exigence WRT-011.
+Les mots clés suivent l'exigence WRT-010 de la spécification de rédaction de {abbr-fpsot}.
+La version française emploie les mots clés français de l'exigence WRT-011.
 
-== Exigences
-
-Donnez à chaque exigence une ancre avec son identifiant, juste au-dessus de son paragraphe.
-L'ancre ressemble à `+[[XYZ-001]]+`.
-L'exemple ci-dessous montre la forme. Remplacez-le par la première exigence.
-
-[[TPL-001]]
-*TPL-001.* Un énoncé normatif DOIT employer un des mots clés du {abbr-bcp-first} 14, en majuscules.
-Le mot clé donne sa force à la règle.
+Un produit est conforme à cette spécification si chaque nom qu'il publie respecte toutes les règles DOIT.
+Un nom publié est un nom dont un autre programme, un enregistrement stocké ou un document peut dépendre.
 
 == Historique du document
-
-Ajoutez une ligne pour chaque version qui modifie cette page.
 
 [cols="1,1,4",options="header"]
 |===
 |Version |Date |Changement
-|0.1.0 |2026-11-03 |Première version.
+|0.1.0 |2026-11-04 |Première version.
 |===

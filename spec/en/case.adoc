@@ -1,0 +1,84 @@
+= Case and word form
+include::_fpsot-terms.adoc[]
+
+Each context that holds a name has one case style.
+These rules also set how to turn a term into the words of a name.
+
+== Case styles
+
+[[NAM-010]]
+*NAM-010.* A name MUST use the case style that this table gives for its context.
+Each style is the most common one in its context, so tools and readers expect it.
+One fixed style per context also lets a linter check every name.
+
+[cols="3,2,3",options="header"]
+|===
+|Context |Case style |Example
+|{abbr-json-first} field name |lowerCamelCase |`assetId`
+|Query parameter name |lowerCamelCase |`assetType`
+|Path template variable |lowerCamelCase |`{assetId}`
+|{abbr-url-first} path segment |kebab-case |`asset-types`
+|Code list value or enum value |kebab-case |`not-covered`
+|Segment of an event type |kebab-case, joined by dots |`org.fpsot.registry.asset.transferred`
+|Java or Kotlin package |lower case, joined by dots, no separator |`org.fpsot.datatypes`
+|Maven `groupId` |lower case, joined by dots |`org.fpsot.registry`
+|Maven `artifactId` |kebab-case |`fpsot-registry-core`
+|Repository name |kebab-case |`fpsot-spec-naming`
+|File name in a specification repository |kebab-case |`code-lists.adoc`
+|===
+
+In lowerCamelCase, the first word is in lower case and each later word starts with a capital, as in `assetId`.
+In kebab-case, every word is in lower case and a hyphen joins the words, as in `asset-types`.
+
+[[NAM-011]]
+*NAM-011.* A case style MUST treat an abbreviation as one ordinary word.
+Write `apiKey`, `htmlPage` and `userId`, never `APIKey` or `userID`.
+A tool can then split a name into its words without error.
+It can also convert the name from one case style to another.
+
+[[NAM-012]]
+*NAM-012.* A digit MUST NOT start a word within a name.
+A digit MAY end a word when it is part of the meaning, as in `addressLine2` or `iso3166Code`.
+A word that starts with a digit has no clear boundary when a tool converts the name between styles.
+
+== Word form
+
+[[NAM-013]]
+*NAM-013.* A name for a list or a collection MUST be a plural noun.
+A name for one item MUST be singular.
+Write `assets` for a list of assets and `asset` for one.
+A word with no plural form, such as `information`, keeps its singular form.
+The form tells the reader whether to expect one value or many.
+
+[[NAM-014]]
+*NAM-014.* A field name or a path segment SHOULD be a noun or a noun phrase, not a verb.
+The {abbr-http-first} method names the action, and the path names the thing it acts on.
+A field holds a value, not an instruction.
+
+[[NAM-015]]
+*NAM-015.* A boolean field SHOULD take the name of its state, without a prefix such as `is` or `has`.
+Write `active` or `signed`, not `isActive`.
+Some serializers drop the prefix `is`.
+The name in the data would then differ from the name in the code.
+
+[[NAM-016]]
+*NAM-016.* A name SHOULD NOT contain a preposition, such as `of`, `for` or `by`.
+Write `ownerName`, not `nameOfOwner`.
+The exceptions are the suffix `At` of NAM-041, and the suffixes `From` and `To` of range filters.
+They follow the field name: `<field>From` includes the bound and `<field>To` excludes it, such as `createdAtFrom` and `createdAtTo`.
+These suffixes are short and common in query parameters, and they keep the field name whole.
+Names without prepositions are shorter, and they match more often across interfaces.
+
+[[NAM-017]]
+*NAM-017.* Tools MUST compare names exactly, with case.
+Two names in one context MUST NOT differ only by case or by separators.
+For example, `assetId` and `assetid` cannot both exist.
+Some languages and databases ignore case, and they would read the two names as one.
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-04 |First version.
+|===
