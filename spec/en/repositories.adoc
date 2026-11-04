@@ -1,0 +1,47 @@
+= Repositories and packages
+include::_fpsot-terms.adoc[]
+
+These rules name the places where {abbr-fpsot-first} code and specifications live and ship.
+
+== Repositories
+
+[[NAM-020]]
+*NAM-020.* A {term-repository} name MUST have the form `fpsot-<kind>-<topic>`, in kebab-case.
+The kind MUST be one of `spec`, `library`, `service`, `tool` or `website`.
+The topic is one or more English words, such as `data-types`.
+The prefix groups the repositories of the project in any list or fork.
+The kind tells readers what to expect before they open the repository.
+
+The kind `spec` is a fixed exception to NAM-005, because the documentation specification sets the form `fpsot-spec-<topic>`.
+A name that a platform fixes, such as `.github` or `fpsot-org.github.io`, keeps that name.
+
+== Java and Kotlin packages
+
+[[NAM-021]]
+*NAM-021.* A Java or Kotlin package MUST start with `org.fpsot`, the reversed form of the domain `fpsot.org`.
+The next segment MUST be the topic of the repository, with its words joined and no separator.
+For example, the topic `data-types` gives `org.fpsot.datatypes`.
+Every segment MUST be in lower case and MUST NOT contain an underscore.
+The reversed domain makes the name unique, and the project controls that domain.
+Hyphens are not valid in Java identifiers, and the Kotlin conventions avoid underscores.
+
+[[NAM-022]]
+*NAM-022.* A Java module name SHOULD be the name of the main package that the module exports.
+A reader can then find the module of a package without a lookup.
+
+== Maven coordinates
+
+[[NAM-023]]
+*NAM-023.* A Maven `groupId` MUST be `org.fpsot` followed by the topic segment of NAM-021, such as `org.fpsot.registry`.
+An `artifactId` MUST be kebab-case and MUST start with `fpsot-`, such as `fpsot-registry-core`.
+The `groupId` then matches the package, as the Maven conventions advise.
+An archive file name holds only the `artifactId` and the version.
+The prefix keeps that file name unique in a folder of dependencies.
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-04 |First version.
+|===

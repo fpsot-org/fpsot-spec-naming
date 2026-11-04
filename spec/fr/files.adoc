@@ -1,0 +1,24 @@
+= Fichiers
+include::_fpsot-terms.adoc[]
+
+Ces règles nomment les fichiers et les dossiers d'un dépôt de spécification de la {abbr-fpsot-first}.
+
+[[NAM-070]]
+*NAM-070.* Dans un dépôt de spécification, un nom de fichier ou de dossier DOIT être en kebab-case et en anglais.
+Son extension DOIT être en minuscules.
+Une page DOIT avoir le même nom de fichier anglais dans chaque dossier de langue, comme `spec/fr/code-lists.adoc`.
+Un fichier dont un outil ou une convention fixe le nom garde ce nom, comme `README.adoc`, `SKILL.md` ou `_fpsot-terms.adoc`.
+La spécification de documentation exige déjà un seul nom de fichier pour les deux langues.
+Les minuscules évitent des erreurs sur les systèmes de fichiers qui ignorent la casse.
+
+[[NAM-071]]
+*NAM-071.* Un diagramme rendu DOIT avoir le même nom de base que sa source, comme `branch-model.puml` et `branch-model.svg`.
+On trouve alors la source de chaque image.
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-04 |Première version.
+|===

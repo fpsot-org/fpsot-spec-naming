@@ -1,0 +1,13 @@
+code: CA
+name: {en: Canada, fr: Canada}
+rows:
+  - id: NAM-010
+    text: {en: "Object keys use one consistent case, either underscore or camel case. Paths and code values have no case rule.", fr: "Les clés d'objet emploient une seule casse constante, avec traits de soulignement ou en casse chameau. Les chemins et les valeurs codées n'ont aucune règle de casse."}
+    status: looser
+    source: {title: "Government of Canada Standards on APIs", date: "2026-08-12", url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/government-canada-standards-apis.html", archive: "https://web.archive.org/web/20261017061648/https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/government-canada-standards-apis.html"}
+    last_checked: "2026-11-04"
+  - id: NAM-014
+    text: {en: "URLs represent entities and business objects, not operations, so verbs stay out of the URL.", fr: "Les adresses URL représentent des entités et des objets d'affaires, pas des opérations, et les verbes restent donc hors de l'adresse."}
+    status: same
+    source: {title: "Government of Canada Standards on APIs", date: "2026-08-12", url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/government-canada-standards-apis.html", archive: "https://web.archive.org/web/20261017061648/https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/government-canada-standards-apis.html"}
+    last_checked: "2026-11-04"

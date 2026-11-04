@@ -1,0 +1,82 @@
+= Principes
+include::_fpsot-terms.adoc[]
+
+Ces règles s'appliquent à tout nom qu'une machine lit dans un projet de la {abbr-fpsot-first}.
+Les pages suivantes ajoutent les règles propres à chaque contexte.
+
+== Langue
+
+[[NAM-001]]
+*NAM-001.* Un nom DOIT être en anglais, dans chaque version linguistique d'un produit.
+Les personnes voient un libellé traduit, jamais le nom lui-même.
+Un seul nom par concept permet au code, aux données et aux journaux de concorder d'une langue à l'autre.
+Des noms traduits doubleraient chaque interface.
+Ils se briseraient aussi chaque fois qu'une traduction s'améliore.
+
+[[NAM-002]]
+*NAM-002.* Le nom d'un concept défini dans la base terminologique de rédaction DOIT employer le terme anglais de cette fiche.
+Le nom DOIT écrire ce terme dans le style de casse de son contexte.
+Par exemple, la fiche « bien » donne le segment de chemin `assets` et le champ `assetId`.
+Le terme français « bien » n'apparaît que dans les libellés.
+La base terminologique relie ainsi chaque nom à une seule définition dans les deux langues.
+
+[[NAM-003]]
+*NAM-003.* Un projet DOIT employer un seul nom pour un concept, et des noms différents pour des concepts différents.
+Cette règle vaut pour toutes les spécifications et tous les produits de {abbr-fpsot}.
+Une personne qui apprend un nom dans une {abbr-api-first} peut alors s'y fier dans la suivante.
+
+== Caractères
+
+[[NAM-004]]
+*NAM-004.* Un nom DOIT contenir seulement des lettres {abbr-ascii-first}, des chiffres et le séparateur de son style de casse.
+Il DOIT commencer par une lettre.
+Ces caractères n'ont jamais besoin d'être codés dans une {abbr-uri-first}.
+Ils sont aussi valides dans les identifiants des langages de programmation courants.
+Les lettres accentuées posent des problèmes de normalisation Unicode et de saisie au clavier.
+
+== Abréviations
+
+[[NAM-005]]
+*NAM-005.* Un nom NE DOIT PAS abréger un mot.
+Il PEUT employer une abréviation de la base terminologique, ainsi que `id` pour « identifiant ».
+Écrivez `description` plutôt que `desc`, et `address` plutôt que `addr`.
+Un mot abrégé peut prendre bien des formes, et on ne peut pas le chercher.
+La base terminologique donne à chaque abréviation permise une seule forme complète dans les deux langues.
+
+== Orthographe
+
+[[NAM-006]]
+*NAM-006.* Un nom DOIT suivre l'orthographe canadienne de l'anglais, telle que la donnent la base terminologique et TERMIUM Plus.
+Par exemple, le nom commun s'écrit `licence` et un champ de couleur s'écrit `colour`.
+La spécification de rédaction impose l'orthographe canadienne pour tout texte.
+Les noms concordent alors avec le texte qui les documente.
+
+[[NAM-007]]
+*NAM-007.* Un nom défini par une norme ou un registre externe DOIT garder l'orthographe et la casse de cette source.
+Les champs d'en-tête {abbr-http-first} du registre de l'Internet Assigned Numbers Authority en sont un exemple.
+Les types de médias, les attributs CloudEvents et les codes {abbr-iso-first} 4217 comme `CAD` en sont d'autres.
+La clé `license` du fichier `publiccode.yml` garde aussi son orthographe.
+Les règles NAM-004 à NAM-006 ne s'appliquent pas à ces noms.
+Un nom modifié briserait tous les outils qui lisent la norme.
+
+== Mots réservés et longueur
+
+[[NAM-008]]
+*NAM-008.* Un nom NE DEVRAIT PAS être un mot réservé d'un langage de programmation ou de requête courant.
+Par exemple : `class`, `default`, `function`, `import`, `new`, `object`, `package` et `select`.
+Le code généré devrait alors protéger ce nom dans certains langages.
+Ajoutez plutôt un mot qui le précise, comme `defaultLanguage`.
+
+[[NAM-009]]
+*NAM-009.* Un nom NE DOIT PAS dépasser 63 caractères, et DEVRAIT compter 4 mots ou moins.
+Chaque segment d'un nom à points, comme un paquetage, compte comme un nom.
+Cette limite convient aux identifiants des bases de données, comme la limite de 63 octets de PostgreSQL.
+Les noms courts se lisent aussi plus facilement dans le code, les journaux et les adresses.
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-04 |Première version.
+|===

@@ -1,0 +1,50 @@
+= Paths
+include::_fpsot-terms.adoc[]
+
+These rules name the parts of a {abbr-uri-first} that {abbr-fpsot-first} defines.
+The scheme and the host follow the rules of their registries.
+
+== Path segments
+
+[[NAM-030]]
+*NAM-030.* A path segment that a project defines MUST be kebab-case.
+A segment that names a collection MUST be a plural noun.
+An example is `/v1/assets/{assetId}/entitlements`.
+The path is case-sensitive, while the scheme and the host are not.
+Lower case everywhere avoids links that differ only by case.
+A hyphen is an unreserved character, so it never needs percent-encoding.
+
+[[NAM-031]]
+*NAM-031.* A path template variable MUST be lowerCamelCase.
+It SHOULD have the name of the field that refers to that resource, such as `{assetId}`.
+The same value then has the same name in the path and in the data.
+
+== What a path holds
+
+[[NAM-032]]
+*NAM-032.* A path MUST NOT contain a file name extension or the name of the software that serves it.
+It MUST NOT contain a person's name or a status, such as `draft` or `old`.
+These facts change while the resource stays the same.
+A path that holds them must then change, and every link to it breaks.
+
+[[NAM-033]]
+*NAM-033.* A path MUST identify one resource by its identifier, not by a name or a label that can change.
+Write `/parties/{partyId}`, never the name of the party.
+The identifier is opaque and holds no personal, place or business information.
+Names and labels change, and they differ between languages.
+A name in a path would also leak personal information into logs.
+
+[[NAM-034]]
+*NAM-034.* The language versions of one resource MUST share the same path segments.
+A first segment that holds a language tag, such as `/fr/`, MAY mark the language.
+Readers and tools can then switch languages by changing one segment.
+Short addresses made for print or radio campaigns are labels for people, and this specification does not cover them.
+They redirect to an address that follows these rules.
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-04 |First version.
+|===

@@ -1,0 +1,82 @@
+= Principles
+include::_fpsot-terms.adoc[]
+
+These rules apply to every name that a machine reads in an {abbr-fpsot-first} project.
+The later pages add the rules of each context.
+
+== Language
+
+[[NAM-001]]
+*NAM-001.* A name MUST be in English, in every language version of a product.
+People see a translated label, never the name itself.
+One name per concept lets code, data and logs match across languages.
+Translated names would double every interface.
+They would also break each time a translation improves.
+
+[[NAM-002]]
+*NAM-002.* A name for a concept that the writing term base defines MUST use the English term of that entry.
+The name MUST write that term in the case style of its context.
+For example, the entry "asset" gives the path segment `assets` and the field `assetId`.
+Its French term "bien" appears only in labels.
+The term base then ties each name to one definition in both languages.
+
+[[NAM-003]]
+*NAM-003.* A project MUST use one name for one concept, and different names for different concepts.
+This holds across every {abbr-fpsot} specification and product.
+A reader who learns a name in one {abbr-api-first} can then rely on it in the next one.
+
+== Characters
+
+[[NAM-004]]
+*NAM-004.* A name MUST contain only {abbr-ascii-first} letters, the digits `0` to `9` and the separator of its case style.
+It MUST start with a letter.
+These characters never need percent-encoding in a {abbr-uri-first}.
+They are also valid in the identifiers of common programming languages.
+Accented letters raise problems of Unicode normalization and keyboard input.
+
+== Abbreviations
+
+[[NAM-005]]
+*NAM-005.* A name MUST NOT shorten a word.
+It MAY use an abbreviation from the term base, and `id` for "identifier".
+Write `description`, not `desc`, and `address`, not `addr`.
+A shortened word has many possible forms, and readers cannot look it up.
+The term base gives each allowed abbreviation one full form in both languages.
+
+== Spelling
+
+[[NAM-006]]
+*NAM-006.* A name MUST use Canadian spelling, as the term base and TERMIUM Plus give it.
+For example, the noun is `licence` and a colour field is `colour`.
+The writing specification sets Canadian spelling for all text.
+Names then match the prose that documents them.
+
+[[NAM-007]]
+*NAM-007.* A name that an outside standard or registry defines MUST keep the exact spelling and case of that source.
+Examples include the {abbr-http-first} header fields in the registry of the Internet Assigned Numbers Authority.
+Other examples are media types, CloudEvents attributes and {abbr-iso-first} 4217 codes such as `CAD`.
+The key `license` of `publiccode.yml` also keeps its spelling.
+Rules NAM-004 to NAM-006 do not apply to these names.
+A changed name would break every tool that reads the standard.
+
+== Reserved words and length
+
+[[NAM-008]]
+*NAM-008.* A name SHOULD NOT be a reserved word of a common programming or query language.
+Examples are `class`, `default`, `function`, `import`, `new`, `object`, `package` and `select`.
+Generated code would have to escape such a name in some languages.
+Add a word that qualifies it instead, such as `defaultLanguage`.
+
+[[NAM-009]]
+*NAM-009.* A name MUST NOT be longer than 63 characters, and SHOULD have 4 words or fewer.
+Each segment of a dotted name, such as a package, counts as one name.
+The limit fits database identifiers, such as the 63-byte limit of PostgreSQL.
+Short names are also easier to read in code, logs and addresses.
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-04 |First version.
+|===

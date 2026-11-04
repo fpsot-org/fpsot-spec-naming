@@ -1,0 +1,23 @@
+= Files
+include::_fpsot-terms.adoc[]
+
+These rules name the files and folders of an {abbr-fpsot-first} specification repository.
+
+[[NAM-070]]
+*NAM-070.* A file or folder name in a specification repository MUST be kebab-case and in English, with a lower-case extension.
+A page MUST have the same English file name in every language folder, such as `spec/fr/code-lists.adoc`.
+A file whose name a tool or a convention fixes keeps that name, such as `README.adoc`, `SKILL.md` or `_fpsot-terms.adoc`.
+The documentation specification already requires one file name for both languages.
+Lower case avoids errors on file systems that ignore case.
+
+[[NAM-071]]
+*NAM-071.* A rendered diagram MUST have the same base name as its source, such as `branch-model.puml` and `branch-model.svg`.
+Readers then find the source of each image.
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-04 |First version.
+|===

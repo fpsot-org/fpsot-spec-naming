@@ -1,0 +1,82 @@
+= Casse et forme des mots
+include::_fpsot-terms.adoc[]
+
+Chaque contexte qui contient un nom a un seul style de casse.
+Ces règles fixent aussi comment transformer un terme en mots d'un nom.
+
+== Styles de casse
+
+[[NAM-010]]
+*NAM-010.* Un nom DOIT employer le style de casse que ce tableau donne pour son contexte.
+Chaque style est le plus courant dans son contexte, et les outils comme les personnes s'y attendent.
+Un style fixe par contexte permet aussi à un outil de vérification de contrôler chaque nom.
+
+[cols="3,2,3",options="header"]
+|===
+|Contexte |Style de casse |Exemple
+|Nom de champ {abbr-json-first} |lowerCamelCase |`assetId`
+|Nom de paramètre de requête |lowerCamelCase |`assetType`
+|Variable de gabarit de chemin |lowerCamelCase |`{assetId}`
+|Segment de chemin d'une {abbr-url-first} |kebab-case |`asset-types`
+|Valeur d'une liste de codes ou d'une énumération |kebab-case |`not-covered`
+|Segment d'un type d'événement |kebab-case, joint par des points |`org.fpsot.registry.asset.transferred`
+|Paquetage Java ou Kotlin |minuscules, jointes par des points, sans séparateur |`org.fpsot.datatypes`
+|`groupId` Maven |minuscules, jointes par des points |`org.fpsot.registry`
+|`artifactId` Maven |kebab-case |`fpsot-registry-core`
+|Nom de dépôt |kebab-case |`fpsot-spec-naming`
+|Nom de fichier d'un dépôt de spécification |kebab-case |`code-lists.adoc`
+|===
+
+En lowerCamelCase, le premier mot est en minuscules et chaque mot suivant commence par une majuscule, comme dans `assetId`.
+En kebab-case, tous les mots sont en minuscules et un trait d'union les joint, comme dans `asset-types`.
+
+[[NAM-011]]
+*NAM-011.* Un style de casse DOIT traiter une abréviation comme un mot ordinaire.
+Écrivez `apiKey`, `htmlPage` et `userId`, jamais `APIKey` ni `userID`.
+Un outil peut alors découper un nom en mots sans erreur.
+Il peut aussi convertir le nom d'un style de casse à un autre.
+
+[[NAM-012]]
+*NAM-012.* Un chiffre NE DOIT PAS commencer un mot dans un nom.
+Un chiffre PEUT terminer un mot quand il fait partie du sens, comme dans `addressLine2` ou `iso3166Code`.
+Un mot qui commence par un chiffre n'a pas de limite claire quand un outil convertit le nom.
+
+== Forme des mots
+
+[[NAM-013]]
+*NAM-013.* Le nom d'une liste ou d'une collection DOIT être un nom commun au pluriel.
+Le nom d'un seul élément DOIT être au singulier.
+Écrivez `assets` pour une liste de biens et `asset` pour un seul.
+Un mot sans pluriel, comme `information`, garde sa forme au singulier.
+La forme indique s'il faut attendre une seule valeur ou plusieurs.
+
+[[NAM-014]]
+*NAM-014.* Un nom de champ ou un segment de chemin DEVRAIT être un groupe nominal, pas un verbe.
+La méthode {abbr-http-first} nomme l'action, et le chemin nomme la chose visée.
+Un champ contient une valeur, pas une instruction.
+
+[[NAM-015]]
+*NAM-015.* Un champ booléen DEVRAIT prendre le nom de son état, sans préfixe comme `is` ou `has`.
+Écrivez `active` ou `signed`, pas `isActive`.
+Certains outils de sérialisation retirent le préfixe `is`.
+Le nom dans les données différerait alors du nom dans le code.
+
+[[NAM-016]]
+*NAM-016.* Un nom NE DEVRAIT PAS contenir de préposition, comme `of`, `for` ou `by`.
+Écrivez `ownerName` plutôt que `nameOfOwner`.
+Le suffixe `At` de l'exigence NAM-041 est la seule exception.
+Les noms sans préposition sont plus courts et concordent plus souvent d'une interface à l'autre.
+
+[[NAM-017]]
+*NAM-017.* Les outils DOIVENT comparer les noms exactement, en tenant compte de la casse.
+Deux noms d'un même contexte NE DOIVENT PAS différer seulement par la casse ou par les séparateurs.
+Par exemple, `assetId` et `assetid` ne peuvent pas exister tous les deux.
+Certains langages et certaines bases de données ignorent la casse et liraient ces deux noms comme un seul.
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-04 |Première version.
+|===

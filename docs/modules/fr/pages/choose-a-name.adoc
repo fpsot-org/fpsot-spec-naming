@@ -1,0 +1,48 @@
+= Choisir un nom
+:page-type: how-to
+include::_fpsot-terms.adoc[]
+
+Ce guide montre comment choisir le nom d'un champ, d'un chemin, d'un événement ou d'une valeur codée.
+
+. Trouvez le concept dans la base terminologique de la spécification de rédaction.
+S'il manque, proposez d'abord une nouvelle fiche.
+
+. Prenez le terme anglais de la fiche, en orthographe canadienne.
+
+. Écrivez chaque mot au complet.
+Gardez seulement les abréviations de la base terminologique, et `id`.
+
+. Mettez le nom au pluriel s'il contient une liste ou nomme une collection.
+
+. Appliquez le style de casse du contexte, selon le tableau de l'exigence NAM-010.
+
+. Vérifiez que le nom commence par une lettre et n'emploie que des lettres, des chiffres et son séparateur.
+
+. Vérifiez que le nom compte 63 caractères ou moins et n'est pas un mot réservé.
+
+. Cherchez le même nom dans les spécifications publiées.
+Un nom doit garder un seul sens.
+
+. Ajoutez un libellé anglais et un libellé français pour les personnes.
+
+== Exemple
+
+Le concept « droit » figure dans la base terminologique, avec le terme anglais « entitlement ».
+Une liste de droits sous un bien reçoit ces noms.
+
+[cols="2,3",options="header"]
+|===
+|Contexte |Nom
+|Chemin |`/v1/assets/{assetId}/entitlements`
+|Champ qui renvoie à un droit |`entitlementId`
+|Type d'événement |`org.fpsot.registry.entitlement.granted`
+|Libellé |« Entitlement » en anglais, « Droit » en français
+|===
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-04 |Première version.
+|===

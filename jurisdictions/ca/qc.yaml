@@ -1,0 +1,8 @@
+code: CA-QC
+name: {en: Québec, fr: Québec}
+rows:
+  - id: NAM-005
+    text: {en: "Short Québec.ca addresses use precise French keywords with their accents. Jargon, initialisms and acronyms are not accepted.", fr: "Les adresses raccourcies de Québec.ca emploient des mots-clés français précis, avec leurs accents. Le jargon, les sigles et les acronymes ne sont pas acceptés."}
+    status: stricter
+    source: {title: "Créer une URL raccourcie Québec.ca", url: "https://www.quebec.ca/a-propos/orientations/creer-url-raccourcie", archive: "https://web.archive.org/web/20260209065526/https://www.quebec.ca/a-propos/orientations/creer-url-raccourcie"}
+    last_checked: "2026-11-04"

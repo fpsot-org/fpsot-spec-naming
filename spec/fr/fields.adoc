@@ -1,0 +1,43 @@
+= Champs
+include::_fpsot-terms.adoc[]
+
+Ces règles nomment les champs des données {abbr-json-first} et les paramètres des requêtes.
+L'exigence NAM-010 fixe leur style de casse.
+
+== Identifiants et renvois
+
+[[NAM-040]]
+*NAM-040.* Le champ qui contient l'identifiant d'une ressource DOIT porter le nom `id`.
+Un champ qui renvoie à une autre ressource DOIT se terminer par `Id`.
+Le nom commence par la ressource ou par son rôle, comme `partyId` ou `ownerId`.
+Une liste de tels renvois DOIT se terminer par `Ids`, comme `assetIds`.
+Les personnes et les outils trouvent alors chaque identifiant et chaque lien par son nom.
+
+== Temps
+
+[[NAM-041]]
+*NAM-041.* Un champ qui contient un instant DEVRAIT se terminer par `At`, comme `createdAt`.
+Un champ qui contient une date de calendrier DEVRAIT se terminer par `Date`, comme `birthDate`.
+Le suffixe indique le genre de valeur avant la lecture du schéma.
+
+== Noms déclarés
+
+[[NAM-042]]
+*NAM-042.* Un schéma DOIT déclarer chaque nom de champ, et un nom de champ NE DOIT PAS provenir des données.
+Une table associative PEUT avoir pour clés des étiquettes de langue, ou les valeurs d'une liste de codes déclarée.
+Ses clés gardent alors la forme de ces étiquettes ou de ces valeurs.
+Un client ne peut lire et vérifier que les noms qu'un schéma déclare.
+Des clés qui proviennent des données brisent aussi les générateurs de code.
+
+[[NAM-043]]
+*NAM-043.* Un nom de champ NE DEVRAIT PAS répéter le nom de l'objet qui le contient.
+Écrivez `name` dans une partie, et non `partyName`.
+L'objet donne déjà le contexte, et le nom plus court se lit mieux dans le code.
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-04 |Première version.
+|===

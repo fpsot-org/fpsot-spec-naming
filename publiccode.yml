@@ -1,6 +1,6 @@
 publiccodeYmlVersion: "0.4"
-name: FPSOT specification template
-url: "https://github.com/fpsot-org/fpsot-spec-template"
+name: FPSOT naming specification
+url: "https://github.com/fpsot-org/fpsot-spec-naming"
 platforms:
   - web
 categories:
@@ -9,22 +9,28 @@ developmentStatus: concept
 softwareType: "standalone/other"
 description:
   en:
-    shortDescription: Template for FPSOT specification repositories.
+    shortDescription: How FPSOT projects name the identifiers that machines read.
     longDescription: >
-      Starting point for an FPSOT specification repository. It holds the
-      layout, the Community Specification License files, and the CI that
-      checks requirement IDs, links, languages and prose.
+      The FPSOT naming specification sets how FPSOT projects name
+      repositories, Java and Kotlin packages, Maven coordinates, address
+      paths, JSON fields, query parameters, event types, code lists and
+      files. Names are in English and use the words of the FPSOT term base,
+      and people see translated labels.
     features:
-      - Specification repository layout
+      - Case style for each context
+      - Stable names within a major version
   fr:
-    shortDescription: Gabarit des dépôts de spécification de FPSOT.
+    shortDescription: Comment les projets de FPSOT nomment les identifiants que les machines lisent.
     longDescription: >
-      Point de départ d'un dépôt de spécification de FPSOT. Il contient la
-      structure, les fichiers de la Community Specification License, et
-      l'intégration continue qui vérifie les identifiants, les liens, les
-      langues et la rédaction.
+      La spécification de nommage de FPSOT fixe comment les projets de FPSOT
+      nomment les dépôts, les paquetages Java et Kotlin, les coordonnées
+      Maven, les chemins d'adresse, les champs JSON, les paramètres de
+      requête, les types d'événements, les listes de codes et les fichiers.
+      Les noms sont en anglais et emploient les mots de la base
+      terminologique de FPSOT, et les personnes voient des libellés traduits.
     features:
-      - Structure d'un dépôt de spécification
+      - Style de casse pour chaque contexte
+      - Noms stables au cours d'une version majeure
 legal:
   license: Community-Spec-1.0
 maintenance:

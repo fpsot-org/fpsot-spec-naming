@@ -1,0 +1,47 @@
+= Dépôts et paquetages
+include::_fpsot-terms.adoc[]
+
+Ces règles nomment les lieux où le code et les spécifications de la {abbr-fpsot-first} sont conservés et distribués.
+
+== Dépôts
+
+[[NAM-020]]
+*NAM-020.* Le nom d'un {term-repository} DOIT avoir la forme `fpsot-<kind>-<topic>`, en kebab-case.
+Le genre `kind` DOIT être `spec`, `library`, `service`, `tool` ou `website`.
+Le sujet `topic` compte un ou plusieurs mots anglais, comme `data-types`.
+Le préfixe regroupe les dépôts du projet dans toute liste ou toute copie.
+Le genre indique au lectorat ce que contient le dépôt avant de l'ouvrir.
+
+Le genre `spec` est une exception fixe à l'exigence NAM-005, car la spécification de documentation impose la forme `fpsot-spec-<topic>`.
+Un nom imposé par une plateforme, comme `.github` ou `fpsot-org.github.io`, garde ce nom.
+
+== Paquetages Java et Kotlin
+
+[[NAM-021]]
+*NAM-021.* Un paquetage Java ou Kotlin DOIT commencer par `org.fpsot`, la forme inversée du domaine `fpsot.org`.
+Le segment suivant DOIT être le sujet du dépôt, avec ses mots joints sans séparateur.
+Par exemple, le sujet `data-types` donne `org.fpsot.datatypes`.
+Chaque segment DOIT être en minuscules et NE DOIT PAS contenir de trait de soulignement.
+Le domaine inversé rend le nom unique, et le projet contrôle ce domaine.
+Le trait d'union n'est pas valide dans un identifiant Java, et les conventions Kotlin évitent le trait de soulignement.
+
+[[NAM-022]]
+*NAM-022.* Le nom d'un module Java DEVRAIT être le nom du principal paquetage que le module exporte.
+On trouve alors le module d'un paquetage sans recherche.
+
+== Coordonnées Maven
+
+[[NAM-023]]
+*NAM-023.* Un `groupId` Maven DOIT être `org.fpsot` suivi du segment de sujet de l'exigence NAM-021, comme `org.fpsot.registry`.
+Un `artifactId` DOIT être en kebab-case et DOIT commencer par `fpsot-`, comme `fpsot-registry-core`.
+Le `groupId` concorde alors avec le paquetage, comme le conseillent les conventions Maven.
+Le nom d'un fichier d'archive contient seulement l'`artifactId` et la version.
+Le préfixe garde ce nom unique dans un dossier de dépendances.
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-04 |Première version.
+|===

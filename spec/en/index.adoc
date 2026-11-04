@@ -1,8 +1,24 @@
-= Specification title
+= FPSOT naming specification
 include::_fpsot-terms.adoc[]
 
-Replace this page with the normative text of the specification.
-Start with the scope, then the conformance classes, then the requirements.
+This specification sets how {abbr-fpsot-first} projects name the identifiers that machines read.
+It covers the names of each {term-repository}, package and file.
+It also covers the paths of each {abbr-uri-first}, the fields of {abbr-json-first} data, and query parameters.
+Event types and code lists complete the list.
+Labels and other text that people read follow the writing specification instead.
+Names inside source code, such as classes and variables, belong to a later coding specification.
+
+The specification has these parts.
+
+* xref:principles.adoc[Principles] apply to every name.
+* xref:case.adoc[Case and word form] sets the case style of each context.
+* xref:repositories.adoc[Repositories and packages] covers repositories, Java and Kotlin packages and Maven coordinates.
+* xref:paths.adoc[Paths] covers the path part of each address.
+* xref:fields.adoc[Fields] covers the names in data.
+* xref:events.adoc[Events] covers event types.
+* xref:code-lists.adoc[Code lists] covers coded values and their labels.
+* xref:files.adoc[Files] covers file names in specification repositories.
+* xref:stability.adoc[Stability] says when a name may change.
 
 == Conformance
 
@@ -11,24 +27,16 @@ ____
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 (RFC 2119, RFC 8174) when, and only when, they appear in all capitals, as shown here.
 ____
 
-The French version uses the keywords of requirement WRT-011 of the {abbr-fpsot-first} writing specification.
+The keywords follow requirement WRT-010 of the {abbr-fpsot} writing specification.
+The French version uses the French keywords of WRT-011.
 
-== Requirements
-
-Give each requirement an anchor line with its ID, directly above its paragraph.
-The anchor looks like `+[[XYZ-001]]+`.
-The example below shows the form. Replace it with the first requirement.
-
-[[TPL-001]]
-*TPL-001.* A normative statement MUST use one of the {abbr-bcp-first} 14 keywords in capitals.
-The keyword gives the rule its strength.
+A product conforms to this specification when every name it publishes meets every MUST rule.
+A published name is one that another program, a stored record or a document can depend on.
 
 == Document history
-
-Add one row for each version that changes this page.
 
 [cols="1,1,4",options="header"]
 |===
 |Version |Date |Change
-|0.1.0 |2026-11-03 |First version.
+|0.1.0 |2026-11-04 |First version.
 |===

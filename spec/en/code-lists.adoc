@@ -1,0 +1,29 @@
+= Code lists
+include::_fpsot-terms.adoc[]
+
+A code list is a closed set of coded values, such as the status of a request.
+An enum in a schema or in code is one kind of code list.
+
+[[NAM-060]]
+*NAM-060.* A code list value that {abbr-fpsot-first} defines MUST be kebab-case, and MUST use the English term for its concept.
+An example is `not-covered`.
+A value MUST be a string, never a number.
+A code from another issuer keeps the exact form of that issuer, under NAM-007.
+Lower case with hyphens reads the same in data, in paths and in file names.
+The comparison status values of the documentation specification already use this form.
+
+Examples of outside codes are `CAD` from {abbr-iso-first} 4217, `CA` from {abbr-iso} 3166, time zone names and government identifiers.
+
+[[NAM-061]]
+*NAM-061.* Each code list value MUST have a label for people, in English and in French.
+A user interface MUST show the label in the language of the reader, never the value.
+The value stays stable under NAM-001.
+The label can then improve without any change to data.
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-04 |First version.
+|===
