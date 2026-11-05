@@ -1,7 +1,7 @@
 = Events
 include::_fpsot-terms.adoc[]
 
-These rules name the types of events that {abbr-fpsot-first} products send, such as link:https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md[CloudEvents].
+These rules name the types of events that {abbr-fpsot-first} products send, such as link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents].
 
 [[NAM-050]]
 *NAM-050.* An event type that the project defines MUST have the form `org.fpsot.<domain>.<resource>.<event>`.
@@ -18,7 +18,7 @@ An event records a fact that already happened to one resource.
 The type then reads as a short sentence.
 
 [[NAM-052]]
-*NAM-052.* A link:https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md[CloudEvents] extension attribute that the project defines MUST use only lower-case {abbr-ascii-first} letters and digits.
+*NAM-052.* A link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents] extension attribute that the project defines MUST use only lower-case {abbr-ascii-first} letters and digits.
 It MUST have 20 characters or fewer.
 CloudEvents allows only these characters, and advises the length limit.
 Some protocols that carry events ignore case in attribute names.
@@ -27,7 +27,7 @@ Some protocols that carry events ignore case in attribute names.
 
 === Normative
 
-* link:https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md[CloudEvents specification], CloudEvents, 1.0.2, 2022-02-06.
+* link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents specification], CloudEvents, 1.0.2, 2022-02-06.
 
 == Document history
 
