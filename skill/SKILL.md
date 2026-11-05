@@ -14,7 +14,7 @@ The spec text in `spec/` wins on any difference. Each line cites its requirement
 - Names must use the English term of the writing term base, in the case style of the context (NAM-002). One concept must have one name (NAM-003).
 - Names must use only ASCII letters, digits and the separator of the case style, and must start with a letter (NAM-004).
 - Names must not shorten words. They may use term base abbreviations and `id` (NAM-005).
-- Names must use Canadian spelling, such as `licence` and `colour` (NAM-006). Names from outside standards must keep their exact form, such as `CAD` or `license` in `publiccode.yml` (NAM-007).
+- Names must use US spelling, such as `license` and `color` (NAM-006). Names from outside standards must keep their exact form, such as `CAD` or the HTTP header field `Referer` (NAM-007).
 - Names should not be reserved words such as `class` or `default` (NAM-008). Names must have at most 63 characters, and should have 4 words or fewer (NAM-009).
 
 ## Case and word form

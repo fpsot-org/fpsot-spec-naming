@@ -12,7 +12,7 @@ Un code d'un autre émetteur garde la forme exacte de cet émetteur, selon l'exi
 Les minuscules et les traits d'union se lisent pareil dans les données, les chemins et les fichiers.
 Les valeurs d'état des comparaisons de la spécification de documentation suivent déjà cette forme.
 
-Voici des exemples de codes externes : `CAD` de la norme {abbr-iso-first} 4217 et `CA` de la norme {abbr-iso} 3166.
+Voici des exemples de codes externes : `CAD` de la norme link:https://www.iso.org/standard/64758.html[ISO 4217] et `CA` de la norme link:https://www.iso.org/standard/72482.html[ISO 3166-1].
 Les noms de fuseaux horaires et les identifiants gouvernementaux en sont d'autres.
 
 [[NAM-061]]
@@ -21,10 +21,18 @@ Une interface utilisateur DOIT afficher le libellé dans la langue de la personn
 La valeur reste stable selon l'exigence NAM-001.
 Le libellé peut alors s'améliorer sans aucun changement aux données.
 
+== Références
+
+=== Références informatives
+
+* link:https://www.iso.org/standard/64758.html[ISO 4217, Currency codes], ISO, ISO 4217:2015, 2015-08. link:https://web.archive.org/web/20261027000453/https://www.iso.org/standard/64758.html[Copie archivée]
+* link:https://www.iso.org/standard/72482.html[ISO 3166-1, Country codes], ISO, ISO 3166-1:2020, 2020-08.
+
 == Historique du document
 
 [cols="1,1,4",options="header"]
 |===
 |Version |Date |Changement
 |0.1.0 |2026-11-04 |Première version.
+|0.2.0 |2026-11-04 |Liens vers les normes externes et références ajoutées.
 |===
