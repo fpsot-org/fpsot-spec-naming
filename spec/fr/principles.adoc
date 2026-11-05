@@ -32,7 +32,7 @@ Une personne qui apprend un nom dans une {abbr-api-first} peut alors s'y fier da
 Il DOIT commencer par une lettre.
 Ces caractères n'ont jamais besoin d'être codés dans une {abbr-uri-first}.
 Ils sont aussi valides dans les identifiants des langages de programmation courants.
-Les lettres accentuées posent des problèmes de normalisation Unicode et de saisie au clavier.
+Les lettres accentuées posent des problèmes de link:https://www.unicode.org/reports/tr15/[normalisation Unicode] et de saisie au clavier.
 
 == Abréviations
 
@@ -46,16 +46,17 @@ La base terminologique donne à chaque abréviation permise une seule forme comp
 == Orthographe
 
 [[NAM-006]]
-*NAM-006.* Un nom DOIT suivre l'orthographe canadienne de l'anglais, telle que la donnent la base terminologique et TERMIUM Plus.
-Par exemple, le nom commun s'écrit `licence` et un champ de couleur s'écrit `colour`.
-La spécification de rédaction impose l'orthographe canadienne pour tout texte.
-Les noms concordent alors avec le texte qui les documente.
+*NAM-006.* Un nom DOIT suivre l'orthographe américaine de l'anglais.
+Par exemple, le nom commun s'écrit `license` et un champ de couleur s'écrit `color`.
+La plupart des interfaces de programmation, bibliothèques et normes qu'emploient les systèmes de {abbr-fpsot} suivent l'orthographe américaine.
+Les noms correspondent alors à ce qu'attendent les équipes de développement.
+La spécification de rédaction impose aussi l'orthographe américaine pour le texte anglais.
 
 [[NAM-007]]
 *NAM-007.* Un nom défini par une norme ou un registre externe DOIT garder l'orthographe et la casse de cette source.
-Les champs d'en-tête {abbr-http-first} du registre de l'Internet Assigned Numbers Authority en sont un exemple.
-Les types de médias, les attributs CloudEvents et les codes {abbr-iso-first} 4217 comme `CAD` en sont d'autres.
-La clé `license` du fichier `publiccode.yml` garde aussi son orthographe.
+Les champs d'en-tête {abbr-http-first} du link:https://www.iana.org/assignments/http-fields/http-fields.xhtml[registre de l'Internet Assigned Numbers Authority] en sont un exemple.
+Les link:https://www.iana.org/assignments/media-types/media-types.xhtml[types de médias], les attributs link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents] et les codes de monnaie link:https://www.iso.org/standard/64758.html[ISO 4217] comme `CAD` en sont d'autres.
+Un nom mal orthographié garde aussi sa forme, comme le champ d'en-tête {abbr-http} `Referer`.
 Les règles NAM-004 à NAM-006 ne s'appliquent pas à ces noms.
 Un nom modifié briserait tous les outils qui lisent la norme.
 
@@ -70,8 +71,22 @@ Ajoutez plutôt un mot qui le précise, comme `defaultLanguage`.
 [[NAM-009]]
 *NAM-009.* Un nom NE DOIT PAS dépasser 63 caractères, et DEVRAIT compter 4 mots ou moins.
 Chaque segment d'un nom à points, comme un paquetage, compte comme un nom.
-Cette limite convient aux identifiants des bases de données, comme la limite de 63 octets de PostgreSQL.
+Cette limite convient aux identifiants des bases de données, comme la limite de 63 octets de link:https://www.postgresql.org/docs/18/sql-syntax-lexical.html[PostgreSQL].
 Les noms courts se lisent aussi plus facilement dans le code, les journaux et les adresses.
+
+== Références
+
+=== Références normatives
+
+* link:https://www.iana.org/assignments/http-fields/http-fields.xhtml[HTTP Field Name Registry], IANA, 2026-11-02. link:https://web.archive.org/web/20260722151325/https://www.iana.org/assignments/http-fields/http-fields.xhtml[Copie archivée]
+* link:https://www.iana.org/assignments/media-types/media-types.xhtml[Media Types], IANA, 2026-11-03. link:https://web.archive.org/web/20260817144854/https://www.iana.org/assignments/media-types/media-types.xhtml[Copie archivée]
+* link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents specification], CloudEvents, 1.0.2, 2022-02-06.
+* link:https://www.iso.org/standard/64758.html[ISO 4217, Currency codes], ISO, ISO 4217:2015, 2015-08. link:https://web.archive.org/web/20261027000453/https://www.iso.org/standard/64758.html[Copie archivée]
+
+=== Références informatives
+
+* link:https://www.unicode.org/reports/tr15/[Unicode Standard Annex #15, Unicode Normalization Forms], Unicode Consortium, Unicode 18.0.0 revision 58, 2026-08-12. link:https://web.archive.org/web/20261101003952/https://www.unicode.org/reports/tr15/[Copie archivée]
+* link:https://www.postgresql.org/docs/18/sql-syntax-lexical.html[PostgreSQL 18 documentation, Lexical Structure], PostgreSQL Global Development Group, 18, 2025-09. link:https://web.archive.org/web/20261021034410/https://www.postgresql.org/docs/18/sql-syntax-lexical.html[Copie archivée]
 
 == Historique du document
 
@@ -79,4 +94,5 @@ Les noms courts se lisent aussi plus facilement dans le code, les journaux et le
 |===
 |Version |Date |Changement
 |0.1.0 |2026-11-04 |Première version.
+|0.2.0 |2026-11-04 |L'exigence NAM-006 impose maintenant l'orthographe américaine. Liens vers les normes externes et références ajoutées.
 |===

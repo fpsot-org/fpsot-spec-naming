@@ -7,7 +7,7 @@ Ce guide montre comment choisir le nom d'un champ, d'un chemin, d'un événement
 . Trouvez le concept dans la base terminologique de la spécification de rédaction.
 S'il manque, proposez d'abord une nouvelle fiche.
 
-. Prenez le terme anglais de la fiche, en orthographe canadienne.
+. Prenez le terme anglais de la fiche, en orthographe américaine.
 
 . Écrivez chaque mot au complet.
 Gardez seulement les abréviations de la base terminologique, et `id`.
@@ -45,4 +45,5 @@ Une liste de droits sous un bien reçoit ces noms.
 |===
 |Version |Date |Changement
 |0.1.0 |2026-11-04 |Première version.
+|0.2.0 |2026-11-04 |Les noms prennent maintenant l'orthographe américaine, selon l'exigence NAM-006.
 |===

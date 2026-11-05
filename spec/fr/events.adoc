@@ -1,7 +1,7 @@
 = Événements
 include::_fpsot-terms.adoc[]
 
-Ces règles nomment les types des événements que les produits de la {abbr-fpsot-first} envoient, par exemple avec CloudEvents.
+Ces règles nomment les types des événements que les produits de la {abbr-fpsot-first} envoient, par exemple avec link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents].
 
 [[NAM-050]]
 *NAM-050.* Un type d'événement que le projet définit DOIT avoir la forme `org.fpsot.<domain>.<resource>.<event>`.
@@ -18,10 +18,16 @@ Un événement consigne un fait déjà arrivé à une ressource.
 Le type se lit alors comme une courte phrase.
 
 [[NAM-052]]
-*NAM-052.* Un attribut d'extension CloudEvents que le projet définit DOIT employer seulement des lettres {abbr-ascii-first} minuscules et des chiffres.
+*NAM-052.* Un attribut d'extension link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents] que le projet définit DOIT employer seulement des lettres {abbr-ascii-first} minuscules et des chiffres.
 Il DOIT compter 20 caractères ou moins.
 CloudEvents n'admet que ces caractères et conseille cette limite de longueur.
 Certains protocoles qui transportent les événements ignorent la casse des noms d'attributs.
+
+== Références
+
+=== Références normatives
+
+* link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents specification], CloudEvents, 1.0.2, 2022-02-06.
 
 == Historique du document
 
@@ -29,4 +35,5 @@ Certains protocoles qui transportent les événements ignorent la casse des noms
 |===
 |Version |Date |Changement
 |0.1.0 |2026-11-04 |Première version.
+|0.2.0 |2026-11-04 |Liens vers les normes externes et références ajoutées.
 |===

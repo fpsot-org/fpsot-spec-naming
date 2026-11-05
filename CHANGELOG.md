@@ -6,6 +6,21 @@ and versions follow [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.h
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-04
+
+### Changed
+
+- NAM-006 now requires US spelling, such as `license` and `color`, instead of Canadian spelling.
+- Every identifier example in the specification, the guides and the skill now uses US spelling.
+- NAM-007 now gives the HTTP header field `Referer` as its example of a kept spelling, because `license` already follows NAM-006.
+- Each outside standard links to its source where it is named, and each page that cites one has a References section.
+- English text uses US spelling.
+
+### Migration
+
+- Names built under 0.1 with Canadian spelling, such as `licence` or `colour`, change to the US form, such as `license` or `color`.
+- This change breaks code that uses those names. In the 0.x series, a minor version may break, so this is version 0.2.0.
+
 ## [0.1.0] - 2026-11-04
 
 ### Added

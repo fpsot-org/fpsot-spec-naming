@@ -32,7 +32,7 @@ A reader who learns a name in one {abbr-api-first} can then rely on it in the ne
 It MUST start with a letter.
 These characters never need percent-encoding in a {abbr-uri-first}.
 They are also valid in the identifiers of common programming languages.
-Accented letters raise problems of Unicode normalization and keyboard input.
+Accented letters raise problems of link:https://www.unicode.org/reports/tr15/[Unicode normalization] and keyboard input.
 
 == Abbreviations
 
@@ -46,16 +46,17 @@ The term base gives each allowed abbreviation one full form in both languages.
 == Spelling
 
 [[NAM-006]]
-*NAM-006.* A name MUST use Canadian spelling, as the term base and TERMIUM Plus give it.
-For example, the noun is `licence` and a colour field is `colour`.
-The writing specification sets Canadian spelling for all text.
-Names then match the prose that documents them.
+*NAM-006.* A name MUST use US spelling.
+For example, the noun is `license`, and a color field is `color`.
+Most programming interfaces, libraries and standards that {abbr-fpsot} systems work with use US spelling.
+Names then match what developers expect.
+The writing specification also sets US spelling for English text.
 
 [[NAM-007]]
 *NAM-007.* A name that an outside standard or registry defines MUST keep the exact spelling and case of that source.
-Examples include the {abbr-http-first} header fields in the registry of the Internet Assigned Numbers Authority.
-Other examples are media types, CloudEvents attributes and {abbr-iso-first} 4217 codes such as `CAD`.
-The key `license` of `publiccode.yml` also keeps its spelling.
+Examples include the {abbr-http-first} header fields in the link:https://www.iana.org/assignments/http-fields/http-fields.xhtml[registry of the Internet Assigned Numbers Authority].
+Other examples are link:https://www.iana.org/assignments/media-types/media-types.xhtml[media types], link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents] attributes and currency codes from link:https://www.iso.org/standard/64758.html[ISO 4217], such as `CAD`.
+A misspelled name also keeps its form, such as the {abbr-http} header field `Referer`.
 Rules NAM-004 to NAM-006 do not apply to these names.
 A changed name would break every tool that reads the standard.
 
@@ -70,8 +71,22 @@ Add a word that qualifies it instead, such as `defaultLanguage`.
 [[NAM-009]]
 *NAM-009.* A name MUST NOT be longer than 63 characters, and SHOULD have 4 words or fewer.
 Each segment of a dotted name, such as a package, counts as one name.
-The limit fits database identifiers, such as the 63-byte limit of PostgreSQL.
+The limit fits database identifiers, such as the 63-byte limit of link:https://www.postgresql.org/docs/18/sql-syntax-lexical.html[PostgreSQL].
 Short names are also easier to read in code, logs and addresses.
+
+== References
+
+=== Normative
+
+* link:https://www.iana.org/assignments/http-fields/http-fields.xhtml[HTTP Field Name Registry], IANA, 2026-11-02. link:https://web.archive.org/web/20260722151325/https://www.iana.org/assignments/http-fields/http-fields.xhtml[Archived copy]
+* link:https://www.iana.org/assignments/media-types/media-types.xhtml[Media Types], IANA, 2026-11-03. link:https://web.archive.org/web/20260817144854/https://www.iana.org/assignments/media-types/media-types.xhtml[Archived copy]
+* link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents specification], CloudEvents, 1.0.2, 2022-02-06.
+* link:https://www.iso.org/standard/64758.html[ISO 4217, Currency codes], ISO, ISO 4217:2015, 2015-08. link:https://web.archive.org/web/20261027000453/https://www.iso.org/standard/64758.html[Archived copy]
+
+=== Informative
+
+* link:https://www.unicode.org/reports/tr15/[Unicode Standard Annex #15, Unicode Normalization Forms], Unicode Consortium, Unicode 18.0.0 revision 58, 2026-08-12. link:https://web.archive.org/web/20261101003952/https://www.unicode.org/reports/tr15/[Archived copy]
+* link:https://www.postgresql.org/docs/18/sql-syntax-lexical.html[PostgreSQL 18 documentation, Lexical Structure], PostgreSQL Global Development Group, 18, 2025-09. link:https://web.archive.org/web/20261021034410/https://www.postgresql.org/docs/18/sql-syntax-lexical.html[Archived copy]
 
 == Document history
 
@@ -79,4 +94,5 @@ Short names are also easier to read in code, logs and addresses.
 |===
 |Version |Date |Change
 |0.1.0 |2026-11-04 |First version.
+|0.2.0 |2026-11-04 |NAM-006 now requires US spelling. Linked outside standards and added references.
 |===

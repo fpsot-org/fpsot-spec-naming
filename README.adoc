@@ -42,7 +42,7 @@ To require the spec in a contract, cite its version and the requirement IDs.
 | Comparison data per jurisdiction. `baseline.yaml` lists the compared requirements.
 |===
 
-== Licence
+== License
 
 The specification is under the Community Specification License 1.0.
 Source code is under the Apache License 2.0.
