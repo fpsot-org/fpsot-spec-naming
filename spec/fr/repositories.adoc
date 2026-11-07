@@ -7,12 +7,15 @@ Ces règles nomment les lieux où le code et les spécifications de la {abbr-fps
 
 [[NAM-020]]
 *NAM-020.* Le nom d'un {term-repository} DOIT avoir la forme `fpsot-<kind>-<topic>`, en kebab-case.
-Le genre `kind` DOIT être `spec`, `library`, `service`, `tool` ou `website`.
+Le genre `kind` DOIT être `spec`, `psc`, `library`, `service`, `tool`, `template` ou `website`.
 Le sujet `topic` compte un ou plusieurs mots anglais, comme `data-types`.
 Le préfixe regroupe les dépôts du projet dans toute liste ou toute copie.
 Le genre indique au lectorat ce que contient le dépôt avant de l'ouvrir.
 
 Le genre `spec` est une exception fixe à l'exigence NAM-005, car la spécification de documentation impose la forme `fpsot-spec-<topic>`.
+Le genre `psc` est aussi une exception fixe, pour une capacité du secteur public (Public Sector Capability).
+Une telle capacité est un ensemble réutilisable de modèles, de règles et de modules.
+Le genre `template` désigne un dépôt dont d'autres dépôts partent.
 Un nom imposé par une plateforme, comme `.github` ou `fpsot-org.github.io`, garde ce nom.
 
 == Paquetages Java et Kotlin
@@ -43,7 +46,7 @@ Le préfixe garde ce nom unique dans un dossier de dépendances.
 === Références informatives
 
 * link:https://kotlinlang.org/docs/coding-conventions.html[Kotlin coding conventions], JetBrains. link:https://web.archive.org/web/20261026232300/https://kotlinlang.org/docs/coding-conventions.html[Copie archivée]
-* link:https://maven.apache.org/guides/mini/guide-naming-conventions.html[Guide to naming conventions on groupId, artifactId, and version], Apache Maven, 2026-11-03. link:https://web.archive.org/web/20261011200628/https://maven.apache.org/guides/mini/guide-naming-conventions.html[Copie archivée]
+* link:https://maven.apache.org/guides/mini/guide-naming-conventions.html[Guide to naming conventions on groupId, artifactId, and version], Apache Maven, non daté. link:https://web.archive.org/web/20261011200628/https://maven.apache.org/guides/mini/guide-naming-conventions.html[Copie archivée]
 
 == Historique du document
 
@@ -52,4 +55,5 @@ Le préfixe garde ce nom unique dans un dossier de dépendances.
 |Version |Date |Changement
 |0.1.0 |2026-11-04 |Première version.
 |0.2.0 |2026-11-04 |Liens vers les normes externes et références ajoutées.
+|0.3.0 |2026-11-07 |Le guide de nommage de Maven figure maintenant comme non daté, car sa page ne montre qu'une date de publication quotidienne. L'exigence NAM-020 ajoute les genres de dépôt `psc` et `template`.
 |===

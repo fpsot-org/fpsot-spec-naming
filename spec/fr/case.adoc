@@ -25,10 +25,18 @@ Un style fixe par contexte permet aussi à un outil de vérification de contrôl
 |`artifactId` Maven |kebab-case |`fpsot-registry-core`
 |Nom de dépôt |kebab-case |`fpsot-spec-naming`
 |Nom de fichier d'un dépôt de spécification |kebab-case |`code-lists.adoc`
+|Segment du chemin d'un jeton de design |kebab-case, joint par des points |`color.text.danger`
 |===
 
 En lowerCamelCase, le premier mot est en minuscules et chaque mot suivant commence par une majuscule, comme dans `assetId`.
 En kebab-case, tous les mots sont en minuscules et un trait d'union les joint, comme dans `asset-types`.
+
+Le chemin d'un jeton de design suit le link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10].
+Un groupe communautaire du {abbr-w3c-first} publie ce format.
+Chaque segment du chemin est en kebab-case.
+Le pas d'une échelle peut être un segment numérique, comme dans `color.blue.50`.
+Un chemin de jeton n'est pas un champ {abbr-json}, donc le lowerCamelCase des noms de champs ne s'y applique pas.
+La spécification de style de {abbr-fpsot-first} nomme ses jetons de design sous cette forme.
 
 [[NAM-011]]
 *NAM-011.* Un style de casse DOIT traiter une abréviation comme un mot ordinaire.
@@ -40,6 +48,8 @@ Il peut aussi convertir le nom d'un style de casse à un autre.
 *NAM-012.* Un chiffre NE DOIT PAS commencer un mot dans un nom.
 Un chiffre PEUT terminer un mot quand il fait partie du sens, comme dans `addressLine2` ou `iso3166Code`.
 Un mot qui commence par un chiffre n'a pas de limite claire quand un outil convertit le nom.
+Cette règle ne s'applique pas au pas numérique du chemin d'un jeton de design, comme `50` dans `color.blue.50`.
+Ce pas forme un segment entier, et les points en marquent les limites.
 
 == Forme des mots
 
@@ -75,10 +85,17 @@ Deux noms d'un même contexte NE DOIVENT PAS différer seulement par la casse ou
 Par exemple, `assetId` et `assetid` ne peuvent pas exister tous les deux.
 Certains langages et certaines bases de données ignorent la casse et liraient ces deux noms comme un seul.
 
+== Références
+
+=== Références normatives
+
+* link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10], W3C Design Tokens Community Group, rapport final de groupe communautaire, 2025-10-28. link:https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/[Copie archivée]
+
 == Historique du document
 
 [cols="1,1,4",options="header"]
 |===
 |Version |Date |Changement
 |0.1.0 |2026-11-04 |Première version.
+|0.3.0 |2026-11-07 |L'exigence NAM-010 couvre maintenant les segments des chemins de jetons de design, et l'exigence NAM-012 permet qu'un tel segment soit un nombre.
 |===
