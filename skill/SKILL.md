@@ -27,7 +27,7 @@ The spec text in `spec/` wins on any difference. Each line cites its requirement
 
 ## Repositories and packages
 
-- Repositories must be `fpsot-<kind>-<topic>`, kind `spec`, `library`, `service`, `tool` or `website` (NAM-020).
+- Repositories must be `fpsot-<kind>-<topic>`, kind `spec`, `psc`, `library`, `service`, `tool`, `template` or `website` (NAM-020).
 - Packages must be `org.fpsot.<topic>`, words joined, lower case, no underscores (NAM-021). The module name should be the main package (NAM-022).
 - Maven: `groupId` must be `org.fpsot.<topic>`, `artifactId` must be `fpsot-…` in kebab-case (NAM-023).
 

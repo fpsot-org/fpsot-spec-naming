@@ -10,6 +10,7 @@ and versions follow [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.h
 
 ### Changed
 
+- NAM-020: the repository kinds `psc` (Public Sector Capability) and `template` are added.
 - NAM-010 now gives the case style of a design token path: kebab-case segments joined by dots, as in the W3C Design Tokens format.
 - NAM-012 now lets the scale step of a design token path be a numeric segment, as in `color.blue.50`.
 - The skill lists design token paths under NAM-010 and NAM-012.

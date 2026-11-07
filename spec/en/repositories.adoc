@@ -7,12 +7,15 @@ These rules name the places where {abbr-fpsot-first} code and specifications liv
 
 [[NAM-020]]
 *NAM-020.* A {term-repository} name MUST have the form `fpsot-<kind>-<topic>`, in kebab-case.
-The kind MUST be one of `spec`, `library`, `service`, `tool` or `website`.
+The kind MUST be one of `spec`, `psc`, `library`, `service`, `tool`, `template` or `website`.
 The topic is one or more English words, such as `data-types`.
 The prefix groups the repositories of the project in any list or fork.
 The kind tells readers what to expect before they open the repository.
 
 The kind `spec` is a fixed exception to NAM-005, because the documentation specification sets the form `fpsot-spec-<topic>`.
+The kind `psc` is a fixed exception too, for a Public Sector Capability.
+Such a capability is a set of reusable public-sector models, rules and modules.
+The kind `template` names a repository that other repositories start from.
 A name that a platform fixes, such as `.github` or `fpsot-org.github.io`, keeps that name.
 
 == Java and Kotlin packages
@@ -52,5 +55,5 @@ The prefix keeps that file name unique in a folder of dependencies.
 |Version |Date |Change
 |0.1.0 |2026-11-04 |First version.
 |0.2.0 |2026-11-04 |Linked outside standards and added references.
-|0.3.0 |2026-11-07 |The Maven naming guide is now listed as not dated, because its page shows only a daily publishing stamp.
+|0.3.0 |2026-11-07 |The Maven naming guide is now listed as not dated, because its page shows only a daily publishing stamp. NAM-020 adds the repository kinds `psc` and `template`.
 |===
