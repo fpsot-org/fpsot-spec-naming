@@ -6,6 +6,18 @@ and versions follow [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.h
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-07
+
+### Changed
+
+- NAM-010 now gives the case style of a design token path: kebab-case segments joined by dots, as in the W3C Design Tokens format.
+- NAM-012 now lets the scale step of a design token path be a numeric segment, as in `color.blue.50`.
+- The skill lists design token paths under NAM-010 and NAM-012.
+
+### Fixed
+
+- The reference to the Maven naming guide is now not dated, because the page shows only the site's daily publishing stamp.
+
 ## [0.2.0] - 2026-11-04
 
 ### Changed

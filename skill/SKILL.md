@@ -19,8 +19,8 @@ The spec text in `spec/` wins on any difference. Each line cites its requirement
 
 ## Case and word form
 
-- Case style must follow the context. lowerCamelCase: JSON fields, query parameters, path variables. kebab-case: path segments, code values, event type segments, artifactIds, repositories, files (NAM-010).
-- Abbreviations must be ordinary words: `apiKey`, `userId` (NAM-011). No word may start with a digit (NAM-012).
+- Case style must follow the context. lowerCamelCase: JSON fields, query parameters, path variables. kebab-case: path segments, code values, event type segments, artifactIds, repositories, files, design token path segments (NAM-010).
+- Abbreviations must be ordinary words: `apiKey`, `userId` (NAM-011). No word may start with a digit, except the numeric scale step of a design token path, such as `color.blue.50` (NAM-012).
 - Lists and collections must be plural, one item must be singular (NAM-013). Field names and path segments should be nouns, not verbs (NAM-014).
 - Booleans should drop `is` or `has` (NAM-015). Names should not contain prepositions, except the suffixes `At`, and `From` and `To` for range filters, such as `createdAtFrom` (NAM-016).
 - Tools must compare names with case. Two names must not differ only by case or separators (NAM-017).
