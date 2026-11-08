@@ -19,7 +19,7 @@ The spec text in `spec/` wins on any difference. Each line cites its requirement
 
 ## Case and word form
 
-- Case style must follow the context. lowerCamelCase: JSON fields, query parameters, path variables. kebab-case: path segments, code values, event type segments, artifactIds, repositories, files, design token path segments (NAM-010).
+- Case style must follow the context. lowerCamelCase: JSON fields, query parameters, path variables. kebab-case: path segments, code values, event type segments, artifactIds, repositories, files, design token path segments, Gherkin tags after the `@`, Gherkin feature file names (NAM-010).
 - Abbreviations must be ordinary words: `apiKey`, `userId` (NAM-011). No word may start with a digit, except the numeric scale step of a design token path, such as `color.blue.50` (NAM-012).
 - Lists and collections must be plural, one item must be singular (NAM-013). Field names and path segments should be nouns, not verbs (NAM-014).
 - Booleans should drop `is` or `has` (NAM-015). Names should not contain prepositions, except the suffixes `At`, and `From` and `To` for range filters, such as `createdAtFrom` (NAM-016).
@@ -40,7 +40,7 @@ The spec text in `spec/` wins on any difference. Each line cites its requirement
 - Every field must be declared. Keys must not come from data, but may be language tags or declared code values (NAM-042). Field names should not repeat the parent name (NAM-043).
 - Event types must be `org.fpsot.<domain>.<resource>.<event>`, with a singular resource and a past-tense event (NAM-050, NAM-051). Extension attributes must use lower-case letters and digits, 20 characters at most (NAM-052).
 - Code values must be kebab-case English strings, never numbers. Codes from another issuer, such as `CAD` or `CA`, must keep the issuer's form (NAM-060, NAM-007). Each value must have an English and a French label (NAM-061).
-- Files must be kebab-case English, with the same name in every language folder (NAM-070). Diagram output must share the base name of its source (NAM-071).
+- Files must be kebab-case English, with the same name in every language folder (NAM-070). Diagram output must share the base name of its source (NAM-071). A Gherkin feature file in any repository must have a kebab-case English name ending in `.feature`, the same in English and French (NAM-072).
 
 ## Stability
 

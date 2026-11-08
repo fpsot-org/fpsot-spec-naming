@@ -26,6 +26,8 @@ One fixed style per context also lets a linter check every name.
 |Repository name |kebab-case |`fpsot-spec-naming`
 |File name in a specification repository |kebab-case |`code-lists.adoc`
 |Segment of a design token path |kebab-case, joined by dots |`color.text.danger`
+|Gherkin tag, after the `@` |kebab-case |`@party-person-001`
+|Gherkin feature file name |kebab-case |`record-a-person.feature`
 |===
 
 In lowerCamelCase, the first word is in lower case and each later word starts with a capital, as in `assetId`.
@@ -37,6 +39,10 @@ Each segment of the path is in kebab-case.
 The step of a scale can be a numeric segment, as in `color.blue.50`.
 A token path is not a {abbr-json} field, so the lowerCamelCase of field names does not apply to it.
 The {abbr-fpsot-first} style specification names its design tokens in this form.
+
+A Gherkin tag starts with `@`, and the name is the part after it.
+Gherkin is the language of the scenarios that the {abbr-fpsot} testing specification describes.
+A tag in kebab-case reads the same in the English and French versions of a feature file.
 
 [[NAM-011]]
 *NAM-011.* A case style MUST treat an abbreviation as one ordinary word.
@@ -98,4 +104,5 @@ Some languages and databases ignore case, and they would read the two names as o
 |Version |Date |Change
 |0.1.0 |2026-11-04 |First version.
 |0.3.0 |2026-11-07 |NAM-010 now covers the segments of design token paths, and NAM-012 lets such a segment be a number.
+|0.4.0 |2026-11-08 |NAM-010 now covers Gherkin tags and Gherkin feature file names.
 |===

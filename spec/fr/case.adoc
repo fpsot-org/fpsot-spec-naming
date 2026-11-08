@@ -26,6 +26,8 @@ Un style fixe par contexte permet aussi à un outil de vérification de contrôl
 |Nom de dépôt |kebab-case |`fpsot-spec-naming`
 |Nom de fichier d'un dépôt de spécification |kebab-case |`code-lists.adoc`
 |Segment du chemin d'un jeton de design |kebab-case, joint par des points |`color.text.danger`
+|Étiquette Gherkin, après le `@` |kebab-case |`@party-person-001`
+|Nom d'un fichier de fonctionnalité Gherkin |kebab-case |`record-a-person.feature`
 |===
 
 En lowerCamelCase, le premier mot est en minuscules et chaque mot suivant commence par une majuscule, comme dans `assetId`.
@@ -37,6 +39,10 @@ Chaque segment du chemin est en kebab-case.
 Le pas d'une échelle peut être un segment numérique, comme dans `color.blue.50`.
 Un chemin de jeton n'est pas un champ {abbr-json}, donc le lowerCamelCase des noms de champs ne s'y applique pas.
 La spécification de style de {abbr-fpsot-first} nomme ses jetons de design sous cette forme.
+
+Une étiquette Gherkin commence par `@`, et le nom est la partie qui suit.
+Gherkin est le langage des scénarios que décrit la spécification de la {abbr-fpsot} sur les tests.
+Une étiquette en kebab-case se lit de la même façon dans les versions anglaise et française d'un fichier de fonctionnalité.
 
 [[NAM-011]]
 *NAM-011.* Un style de casse DOIT traiter une abréviation comme un mot ordinaire.
@@ -98,4 +104,5 @@ Certains langages et certaines bases de données ignorent la casse et liraient c
 |Version |Date |Changement
 |0.1.0 |2026-11-04 |Première version.
 |0.3.0 |2026-11-07 |L'exigence NAM-010 couvre maintenant les segments des chemins de jetons de design, et l'exigence NAM-012 permet qu'un tel segment soit un nombre.
+|0.4.0 |2026-11-08 |L'exigence NAM-010 couvre maintenant les étiquettes Gherkin et les noms des fichiers de fonctionnalité Gherkin.
 |===

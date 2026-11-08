@@ -6,6 +6,17 @@ and versions follow [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.h
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-11-08
+
+### Added
+
+- NAM-072: a Gherkin feature file in any repository has a kebab-case English name ending in `.feature`, the same in English and French.
+
+### Changed
+
+- NAM-010 now gives the case style of Gherkin tags (kebab-case after the `@`) and of Gherkin feature file names.
+- The skill lists Gherkin tags and feature files under NAM-010 and NAM-072.
+
 ## [0.3.0] - 2026-11-07
 
 ### Changed
