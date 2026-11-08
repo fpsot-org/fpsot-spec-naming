@@ -15,10 +15,17 @@ Les minuscules évitent des erreurs sur les systèmes de fichiers qui ignorent l
 *NAM-071.* Un diagramme rendu DOIT avoir le même nom de base que sa source, comme `branch-model.puml` et `branch-model.svg`.
 On trouve alors la source de chaque image.
 
+[[NAM-072]]
+*NAM-072.* Dans tout dépôt, un fichier de fonctionnalité Gherkin DOIT avoir un nom anglais en kebab-case, avec l'extension `.feature`.
+Ses versions anglaise et française DOIVENT avoir le même nom de fichier, comme `features/en/record-a-person.feature` et `features/fr/record-a-person.feature`.
+La spécification sur les tests fixe où vont les deux versions et comment elles restent en accord.
+Un seul nom permet à un outil d'associer les deux versions de chaque fonctionnalité.
+
 == Historique du document
 
 [cols="1,1,4",options="header"]
 |===
 |Version |Date |Changement
 |0.1.0 |2026-11-04 |Première version.
+|0.4.0 |2026-11-08 |L'exigence NAM-072 nomme les fichiers de fonctionnalité Gherkin de tout dépôt.
 |===
