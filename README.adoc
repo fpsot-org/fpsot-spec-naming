@@ -1,7 +1,7 @@
 = FPSOT naming specification
 
 This specification sets how FPSOT projects name the identifiers that machines read.
-It covers repositories, Java and Kotlin packages, Maven coordinates, address paths, JSON fields and query parameters, event types, code lists and file names.
+It covers repositories, Java and Kotlin packages, Maven coordinates, address paths, JSON fields and query parameters, event types, telemetry attributes, code lists and file names.
 Names are in English, and people see translated labels.
 
 == Implement this spec

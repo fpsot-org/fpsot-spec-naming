@@ -6,6 +6,24 @@ and versions follow [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.h
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-11-11
+
+### Added
+
+- NAM-053: a product should use an attribute of the OpenTelemetry semantic conventions 1.45.0 when one has the meaning it needs, and may define its own when that attribute is not Stable.
+- NAM-054: a telemetry attribute that the project defines starts with `org.fpsot.`. An attribute of another organization, such as an agency, starts with that organization's reversed domain name. No new name starts with a namespace of the conventions.
+- NAM-055: after its prefix, a telemetry attribute name has segments joined by dots, each in snake_case, with a dot between an object and its property.
+- NAM-056: each segment meets the character, abbreviation, spelling, length and case rules as one name, and the last segment follows the word form rules.
+- NAM-057: the identifier of an object is the segment `id`, and an attribute that carries a field keeps the words of that field.
+- NAM-058: a published telemetry attribute name does not change or disappear within a major version.
+
+### Changed
+
+- NAM-010 now gives the case style of a telemetry attribute name: snake_case segments joined by dots.
+- NAM-080 now names telemetry attributes among the published names it covers.
+- The events page has sections for event types, extension attributes and telemetry attributes.
+- The skill lists telemetry attributes under NAM-010 and NAM-053 to NAM-058.
+
 ## [0.4.0] - 2026-11-08
 
 ### Added

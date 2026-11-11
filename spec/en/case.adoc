@@ -20,6 +20,7 @@ One fixed style per context also lets a linter check every name.
 |{abbr-url-first} path segment |kebab-case |`asset-types`
 |Code list value or enum value |kebab-case |`not-covered`
 |Segment of an event type |kebab-case, joined by dots |`org.fpsot.registry.asset.transferred`
+|Segment of a telemetry attribute name |snake_case, joined by dots |`org.fpsot.identity.represented_party.id`
 |Java or Kotlin package |lower case, joined by dots, no separator |`org.fpsot.datatypes`
 |Maven `groupId` |lower case, joined by dots |`org.fpsot.registry`
 |Maven `artifactId` |kebab-case |`fpsot-registry-core`
@@ -32,6 +33,8 @@ One fixed style per context also lets a linter check every name.
 
 In lowerCamelCase, the first word is in lower case and each later word starts with a capital, as in `assetId`.
 In kebab-case, every word is in lower case and a hyphen joins the words, as in `asset-types`.
+In snake_case, every word is in lower case and an underscore joins the words, as in `represented_party`.
+NAM-053 to NAM-058 give the other rules of telemetry attribute names.
 
 A design token path follows the link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10].
 A community group of the {abbr-w3c-first} publishes this format.
@@ -105,4 +108,5 @@ Some languages and databases ignore case, and they would read the two names as o
 |0.1.0 |2026-11-04 |First version.
 |0.3.0 |2026-11-07 |NAM-010 now covers the segments of design token paths, and NAM-012 lets such a segment be a number.
 |0.4.0 |2026-11-08 |NAM-010 now covers Gherkin tags and Gherkin feature file names.
+|0.5.0 |2026-11-11 |NAM-010 now covers the segments of telemetry attribute names.
 |===

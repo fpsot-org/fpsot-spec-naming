@@ -4,7 +4,7 @@ include::_fpsot-terms.adoc[]
 Cette spécification fixe comment les projets de la {abbr-fpsot-first} nomment les identifiants que les machines lisent.
 Elle couvre le nom de chaque {term-repository}, de chaque paquetage et de chaque fichier.
 Elle couvre aussi les chemins de chaque {abbr-uri-first}, les champs des données {abbr-json-first} et les paramètres de requête.
-Les types d'événements et les listes de codes complètent la liste.
+Les types d'événements, les attributs de télémétrie et les listes de codes complètent la liste.
 Les libellés et les autres textes que les personnes lisent suivent plutôt la spécification de rédaction.
 Les noms internes au code source, comme les classes et les variables, relèveront d'une future spécification sur le code.
 
@@ -15,7 +15,7 @@ La spécification comporte les parties suivantes.
 * La partie xref:repositories.adoc[Dépôts et paquetages] couvre les dépôts, les paquetages Java et Kotlin et les coordonnées Maven.
 * La partie xref:paths.adoc[Chemins] couvre la partie chemin de chaque adresse.
 * La partie xref:fields.adoc[Champs] couvre les noms dans les données.
-* La partie xref:events.adoc[Événements] couvre les types d'événements.
+* La partie xref:events.adoc[Événements] couvre les types d'événements et les attributs de télémétrie.
 * La partie xref:code-lists.adoc[Listes de codes] couvre les valeurs codées et leurs libellés.
 * La partie xref:files.adoc[Fichiers] couvre les noms de fichiers des dépôts de spécification.
 * La partie xref:stability.adoc[Stabilité] indique quand un nom peut changer.
