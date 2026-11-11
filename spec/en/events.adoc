@@ -2,6 +2,9 @@
 include::_fpsot-terms.adoc[]
 
 These rules name the types of events that {abbr-fpsot-first} products send, such as link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents].
+They also name the attributes of the telemetry that these products send with OpenTelemetry.
+
+== Event types
 
 [[NAM-050]]
 *NAM-050.* An event type that the project defines MUST have the form `org.fpsot.<domain>.<resource>.<event>`.
@@ -17,17 +20,74 @@ An example is `org.fpsot.registry.asset.transferred`.
 An event records a fact that already happened to one resource.
 The type then reads as a short sentence.
 
+== Extension attributes
+
 [[NAM-052]]
 *NAM-052.* A link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents] extension attribute that the project defines MUST use only lower-case {abbr-ascii-first} letters and digits.
 It MUST have 20 characters or fewer.
 CloudEvents allows only these characters, and advises the length limit.
 Some protocols that carry events ignore case in attribute names.
 
+== Telemetry attributes
+
+A telemetry attribute is a named value of an OpenTelemetry log record, span, metric or resource.
+An example is `service.name`.
+The link:https://opentelemetry.io/docs/specs/semconv/general/naming/[naming rules of the OpenTelemetry semantic conventions] apply to these names.
+NAM-052 covers the extension attributes of CloudEvents instead.
+NAM-010 still sets the case of the fields in the data of an event.
+
+[[NAM-053]]
+*NAM-053.* A product SHOULD use an attribute of the link:https://github.com/open-telemetry/semantic-conventions/tree/fb30ca17193b551473b1f43c315482918ab6987c/docs/registry/attributes[semantic conventions 1.45.0] when one has the meaning it needs.
+It keeps the exact name of that attribute, under NAM-007.
+A product MAY define its own attribute when the matching attribute of the conventions is not Stable.
+It SHOULD NOT use an attribute that the conventions mark Deprecated.
+Tools, dashboards and queries already know the names of the conventions.
+A name that is not Stable can still change, and a deprecated name will go away.
+
+[[NAM-054]]
+*NAM-054.* The name of a telemetry attribute that the project defines MUST start with `org.fpsot.`.
+Another organization, such as an agency of a {term-jurisdiction}, MUST start its names with its reversed domain name.
+An example is `org.example.` for `example.org`, with an underscore for each hyphen of the domain.
+Another organization MUST NOT define a name under `org.fpsot.`.
+A new name MUST NOT start with a namespace of the conventions, such as `http.` or `otel.`.
+The conventions advise a reversed domain name, so that names never collide with other organizations or later conventions.
+
+[[NAM-055]]
+*NAM-055.* After its prefix, a telemetry attribute name MUST have one or more segments joined by dots.
+Each segment MUST be in snake_case: words in lower case, joined by an underscore.
+A dot SHOULD separate an object that can have several properties from each property.
+An example is `org.fpsot.actor.id` beside `org.fpsot.actor.role`.
+An underscore joins only the words of one segment, as in `org.fpsot.identity.represented_party.id`.
+OpenTelemetry tools expect this form, and the dots let a reader group the attributes of one object.
+
+[[NAM-056]]
+*NAM-056.* Each segment MUST meet NAM-004, NAM-005, NAM-006, NAM-009, NAM-011 and NAM-012 as one name.
+The last segment MUST follow NAM-013, and SHOULD follow NAM-014 to NAM-016.
+An attribute that holds a list then has a plural name, such as `org.fpsot.objects`.
+NAM-008 does not apply, because code reads an attribute name as a string, not as an identifier.
+A telemetry name is then as clear as the other names of a product.
+
+[[NAM-057]]
+*NAM-057.* The identifier of an object SHOULD be the segment `id` after the object, as in a field under NAM-040.
+An attribute that carries a field of the event data SHOULD keep the words of that field.
+For example, the field `representedPartyId` becomes `represented_party.id`.
+The same concept then has the same words in the data and in the telemetry, under NAM-003.
+
+[[NAM-058]]
+*NAM-058.* A published telemetry attribute name MUST NOT change or disappear within a major version.
+NAM-080 to NAM-082 say the same for every published name.
+A minor version MAY add a new name for the same meaning.
+The old name then stays until the next major version.
+Dashboards, alerts and saved queries find records by the attribute name.
+A renamed attribute silently empties them.
+
 == References
 
 === Normative
 
 * link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents specification], CloudEvents, 1.0.2, 2022-02-06.
+* link:https://opentelemetry.io/docs/specs/semconv/general/naming/[OpenTelemetry Semantic Conventions, Naming], OpenTelemetry, 1.45.0, 2026-11-02. link:https://github.com/open-telemetry/semantic-conventions/blob/fb30ca17193b551473b1f43c315482918ab6987c/docs/general/naming.md[Source of version 1.45.0]
+* link:https://github.com/open-telemetry/semantic-conventions/tree/fb30ca17193b551473b1f43c315482918ab6987c/docs/registry/attributes[OpenTelemetry Semantic Conventions, Attribute registry], OpenTelemetry, 1.45.0, 2026-11-02.
 
 == Document history
 
@@ -36,4 +96,5 @@ Some protocols that carry events ignore case in attribute names.
 |Version |Date |Change
 |0.1.0 |2026-11-04 |First version.
 |0.2.0 |2026-11-04 |Linked outside standards and added references.
+|0.5.0 |2026-11-11 |Added the names of telemetry attributes, NAM-053 to NAM-058.
 |===

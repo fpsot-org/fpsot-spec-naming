@@ -7,7 +7,7 @@ Les numéros de version suivent link:https://semver.org/spec/v2.0.0.html[Semanti
 
 [[NAM-080]]
 *NAM-080.* Un nom publié NE DOIT PAS changer ni disparaître au cours d'une version majeure.
-La règle couvre les noms des champs, des chemins et des événements.
+La règle couvre les noms des champs, des chemins, des événements et des attributs de télémétrie.
 Elle couvre aussi les valeurs des listes de codes, les paquetages et les coordonnées Maven.
 Un nom modifié brise le code et les données autant qu'un nom retiré.
 
@@ -46,4 +46,5 @@ Un nom réutilisé les dirige vers le mauvais code.
 |Version |Date |Changement
 |0.1.0 |2026-11-04 |Première version.
 |0.2.0 |2026-11-04 |Liens vers les normes externes et références ajoutées.
+|0.5.0 |2026-11-11 |L'exigence NAM-080 couvre maintenant les noms des attributs de télémétrie.
 |===

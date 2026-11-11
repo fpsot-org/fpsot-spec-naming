@@ -20,6 +20,7 @@ Un style fixe par contexte permet aussi à un outil de vérification de contrôl
 |Segment de chemin d'une {abbr-url-first} |kebab-case |`asset-types`
 |Valeur d'une liste de codes ou d'une énumération |kebab-case |`not-covered`
 |Segment d'un type d'événement |kebab-case, joint par des points |`org.fpsot.registry.asset.transferred`
+|Segment d'un nom d'attribut de télémétrie |snake_case, joint par des points |`org.fpsot.identity.represented_party.id`
 |Paquetage Java ou Kotlin |minuscules, jointes par des points, sans séparateur |`org.fpsot.datatypes`
 |`groupId` Maven |minuscules, jointes par des points |`org.fpsot.registry`
 |`artifactId` Maven |kebab-case |`fpsot-registry-core`
@@ -32,6 +33,8 @@ Un style fixe par contexte permet aussi à un outil de vérification de contrôl
 
 En lowerCamelCase, le premier mot est en minuscules et chaque mot suivant commence par une majuscule, comme dans `assetId`.
 En kebab-case, tous les mots sont en minuscules et un trait d'union les joint, comme dans `asset-types`.
+En snake_case, tous les mots sont en minuscules et un trait de soulignement les joint, comme dans `represented_party`.
+Les exigences NAM-053 à NAM-058 donnent les autres règles des noms d'attributs de télémétrie.
 
 Le chemin d'un jeton de design suit le link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10].
 Un groupe communautaire du {abbr-w3c-first} publie ce format.
@@ -105,4 +108,5 @@ Certains langages et certaines bases de données ignorent la casse et liraient c
 |0.1.0 |2026-11-04 |Première version.
 |0.3.0 |2026-11-07 |L'exigence NAM-010 couvre maintenant les segments des chemins de jetons de design, et l'exigence NAM-012 permet qu'un tel segment soit un nombre.
 |0.4.0 |2026-11-08 |L'exigence NAM-010 couvre maintenant les étiquettes Gherkin et les noms des fichiers de fonctionnalité Gherkin.
+|0.5.0 |2026-11-11 |L'exigence NAM-010 couvre maintenant les segments des noms d'attributs de télémétrie.
 |===

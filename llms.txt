@@ -1,6 +1,6 @@
 # FPSOT naming specification
 
-> How FPSOT projects name the identifiers that machines read: repositories, packages, Maven coordinates, paths, JSON fields, event types, code lists and files.
+> How FPSOT projects name the identifiers that machines read: repositories, packages, Maven coordinates, paths, JSON fields, event types, telemetry attributes, code lists and files.
 
 ## Specification
 
@@ -10,9 +10,9 @@
 - [Repositories and packages](spec/en/repositories.adoc): NAM-020 to NAM-023.
 - [Paths](spec/en/paths.adoc): NAM-030 to NAM-034.
 - [Fields](spec/en/fields.adoc): NAM-040 to NAM-043.
-- [Events](spec/en/events.adoc): NAM-050 to NAM-052.
+- [Events](spec/en/events.adoc): NAM-050 to NAM-058, event types and telemetry attributes.
 - [Code lists](spec/en/code-lists.adoc): NAM-060, NAM-061.
-- [Files](spec/en/files.adoc): NAM-070, NAM-071.
+- [Files](spec/en/files.adoc): NAM-070 to NAM-072.
 - [Stability](spec/en/stability.adoc): NAM-080 to NAM-084.
 
 ## Guides

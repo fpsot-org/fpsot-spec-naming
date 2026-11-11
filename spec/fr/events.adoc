@@ -2,6 +2,9 @@
 include::_fpsot-terms.adoc[]
 
 Ces règles nomment les types des événements que les produits de la {abbr-fpsot-first} envoient, par exemple avec link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents].
+Elles nomment aussi les attributs de la télémétrie que ces produits envoient avec OpenTelemetry.
+
+== Types d'événements
 
 [[NAM-050]]
 *NAM-050.* Un type d'événement que le projet définit DOIT avoir la forme `org.fpsot.<domain>.<resource>.<event>`.
@@ -17,17 +20,75 @@ Par exemple : `org.fpsot.registry.asset.transferred`.
 Un événement consigne un fait déjà arrivé à une ressource.
 Le type se lit alors comme une courte phrase.
 
+== Attributs d'extension
+
 [[NAM-052]]
 *NAM-052.* Un attribut d'extension link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents] que le projet définit DOIT employer seulement des lettres {abbr-ascii-first} minuscules et des chiffres.
 Il DOIT compter 20 caractères ou moins.
 CloudEvents n'admet que ces caractères et conseille cette limite de longueur.
 Certains protocoles qui transportent les événements ignorent la casse des noms d'attributs.
 
+== Attributs de télémétrie
+
+Un attribut de télémétrie est une valeur nommée d'une ressource OpenTelemetry ou d'un de ses signaux.
+Ces signaux sont l'enregistrement de journal, la portée de trace et la métrique.
+Un exemple est `service.name`.
+Les link:https://opentelemetry.io/docs/specs/semconv/general/naming/[règles de nommage des conventions sémantiques d'OpenTelemetry] s'appliquent à ces noms.
+L'exigence NAM-052 couvre plutôt les attributs d'extension de CloudEvents.
+L'exigence NAM-010 fixe toujours la casse des champs dans les données d'un événement.
+
+[[NAM-053]]
+*NAM-053.* Un produit DEVRAIT employer un attribut des link:https://github.com/open-telemetry/semantic-conventions/tree/fb30ca17193b551473b1f43c315482918ab6987c/docs/registry/attributes[conventions sémantiques 1.45.0] qui a le sens voulu.
+Il garde le nom exact de cet attribut, selon NAM-007.
+Un produit PEUT définir son propre attribut quand l'attribut correspondant des conventions n'est pas Stable.
+Il NE DEVRAIT PAS employer un attribut que les conventions marquent Deprecated.
+Les outils, les tableaux de bord et les requêtes connaissent déjà les noms des conventions.
+Un nom qui n'est pas Stable peut encore changer, et un nom obsolète finit par disparaître.
+
+[[NAM-054]]
+*NAM-054.* Le nom d'un attribut de télémétrie que le projet définit DOIT commencer par `org.fpsot.`.
+Une autre organisation, comme un organisme d'une {term-jurisdiction}, DOIT commencer ses noms par son nom de domaine inversé.
+Un exemple est `org.example.` pour `example.org`, avec un trait de soulignement pour chaque trait d'union du domaine.
+Une autre organisation NE DOIT PAS définir de nom sous `org.fpsot.`.
+Un nouveau nom NE DOIT PAS commencer par un espace de noms des conventions, comme `http.` ou `otel.`.
+Les conventions conseillent un nom de domaine inversé, pour éviter tout conflit avec d'autres organisations ou de futures conventions.
+
+[[NAM-055]]
+*NAM-055.* Après son préfixe, un nom d'attribut de télémétrie DOIT avoir un ou plusieurs segments joints par des points.
+Chaque segment DOIT être en snake_case : des mots en minuscules, joints par un trait de soulignement.
+Un point DEVRAIT séparer de chaque propriété un objet qui peut avoir plusieurs propriétés.
+Un exemple est `org.fpsot.actor.id` à côté de `org.fpsot.actor.role`.
+Un trait de soulignement joint seulement les mots d'un même segment, comme dans `org.fpsot.identity.represented_party.id`.
+Les outils OpenTelemetry attendent cette forme, et les points regroupent les attributs d'un même objet.
+
+[[NAM-056]]
+*NAM-056.* Chaque segment DOIT respecter NAM-004, NAM-005, NAM-006, NAM-009, NAM-011 et NAM-012 comme un nom.
+Le dernier segment DOIT suivre NAM-013, et DEVRAIT suivre NAM-014 à NAM-016.
+Un attribut qui contient une liste a alors un nom au pluriel, comme `org.fpsot.objects`.
+L'exigence NAM-008 ne s'applique pas, car le code lit un nom d'attribut comme une chaîne.
+Un nom de télémétrie est alors aussi clair que les autres noms d'un produit.
+
+[[NAM-057]]
+*NAM-057.* L'identifiant d'un objet DEVRAIT être le segment `id` après l'objet, comme NAM-040 le nomme dans un champ.
+Un attribut qui porte un champ des données de l'événement DEVRAIT garder les mots de ce champ.
+Par exemple, le champ `representedPartyId` devient `represented_party.id`.
+Le même concept a alors les mêmes mots dans les données et dans la télémétrie, selon NAM-003.
+
+[[NAM-058]]
+*NAM-058.* Un nom d'attribut de télémétrie publié NE DOIT PAS changer ni disparaître au cours d'une version majeure.
+Les exigences NAM-080 à NAM-082 disent la même chose pour chaque nom publié.
+Une version mineure PEUT ajouter un nouveau nom pour le même sens.
+L'ancien nom reste alors jusqu'à la version majeure suivante.
+Les tableaux de bord, les alertes et les requêtes enregistrées trouvent les enregistrements par le nom d'attribut.
+Un attribut renommé les vide sans avertissement.
+
 == Références
 
 === Références normatives
 
 * link:https://github.com/cloudevents/spec/blob/fc1f6f31f5f011a72183f1bcea20c987cb683ade/cloudevents/spec.md[CloudEvents specification], CloudEvents, 1.0.2, 2022-02-06.
+* link:https://opentelemetry.io/docs/specs/semconv/general/naming/[OpenTelemetry Semantic Conventions, Naming], OpenTelemetry, 1.45.0, 2026-11-02. link:https://github.com/open-telemetry/semantic-conventions/blob/fb30ca17193b551473b1f43c315482918ab6987c/docs/general/naming.md[Source de la version 1.45.0]
+* link:https://github.com/open-telemetry/semantic-conventions/tree/fb30ca17193b551473b1f43c315482918ab6987c/docs/registry/attributes[OpenTelemetry Semantic Conventions, Attribute registry], OpenTelemetry, 1.45.0, 2026-11-02.
 
 == Historique du document
 
@@ -36,4 +97,5 @@ Certains protocoles qui transportent les événements ignorent la casse des noms
 |Version |Date |Changement
 |0.1.0 |2026-11-04 |Première version.
 |0.2.0 |2026-11-04 |Liens vers les normes externes et références ajoutées.
+|0.5.0 |2026-11-11 |Ajout des noms des attributs de télémétrie, NAM-053 à NAM-058.
 |===
