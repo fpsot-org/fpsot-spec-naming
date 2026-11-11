@@ -31,7 +31,7 @@ Certains protocoles qui transportent les événements ignorent la casse des noms
 == Attributs de télémétrie
 
 Un attribut de télémétrie est une valeur nommée d'une ressource OpenTelemetry ou d'un de ses signaux.
-Ces signaux sont l'enregistrement de journal, la portée de trace et la métrique.
+Ces signaux sont l'enregistrement de journal, le segment de trace et la métrique.
 Un exemple est `service.name`.
 Les link:https://opentelemetry.io/docs/specs/semconv/general/naming/[règles de nommage des conventions sémantiques d'OpenTelemetry] s'appliquent à ces noms.
 L'exigence NAM-052 couvre plutôt les attributs d'extension de CloudEvents.
