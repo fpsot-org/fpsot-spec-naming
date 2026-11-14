@@ -6,6 +6,13 @@ and versions follow [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.h
 
 ## [Unreleased]
 
+## [0.5.1] - 2026-11-14
+
+### Fixed
+
+- The index now names design tokens among the names the specification covers: the segments of a token path follow its case rules, and the style specification sets the rest of a token name.
+- The case page cites STY-004 and STY-005 of the style specification for the names of design tokens. No rule changes.
+
 ## [0.5.0] - 2026-11-11
 
 ### Added

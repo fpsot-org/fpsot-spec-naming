@@ -5,6 +5,9 @@ Cette spécification fixe comment les projets de la {abbr-fpsot-first} nomment l
 Elle couvre le nom de chaque {term-repository}, de chaque paquetage et de chaque fichier.
 Elle couvre aussi les chemins de chaque {abbr-uri-first}, les champs des données {abbr-json-first} et les paramètres de requête.
 Les types d'événements, les attributs de télémétrie et les listes de codes complètent la liste.
+
+Les segments du chemin d'un jeton de design suivent aussi les règles de casse de cette spécification.
+La spécification de style de {abbr-fpsot} fixe le reste du nom d'un jeton dans les exigences STY-004 et STY-005.
 Les libellés et les autres textes que les personnes lisent suivent plutôt la spécification de rédaction.
 Les noms internes au code source, comme les classes et les variables, relèveront d'une future spécification sur le code.
 
@@ -47,4 +50,5 @@ Un nom publié est un nom dont un autre programme, un enregistrement stocké ou 
 |Version |Date |Changement
 |0.1.0 |2026-11-04 |Première version.
 |0.2.0 |2026-11-04 |Liens vers les RFC de conformité et références ajoutées.
+|0.5.1 |2026-11-14 |Nomme les jetons de design parmi les noms que couvre la spécification.
 |===
