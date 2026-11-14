@@ -41,7 +41,10 @@ A community group of the {abbr-w3c-first} publishes this format.
 Each segment of the path is in kebab-case.
 The step of a scale can be a numeric segment, as in `color.blue.50`.
 A token path is not a {abbr-json} field, so the lowerCamelCase of field names does not apply to it.
+
 The {abbr-fpsot-first} style specification names its design tokens in this form.
+STY-004 of that specification sets what a base token name and a semantic token name say.
+STY-005 takes the words of every token name from this specification.
 
 A Gherkin tag starts with `@`, and the name is the part after it.
 Gherkin is the language of the scenarios that the {abbr-fpsot} testing specification describes.
@@ -109,4 +112,5 @@ Some languages and databases ignore case, and they would read the two names as o
 |0.3.0 |2026-11-07 |NAM-010 now covers the segments of design token paths, and NAM-012 lets such a segment be a number.
 |0.4.0 |2026-11-08 |NAM-010 now covers Gherkin tags and Gherkin feature file names.
 |0.5.0 |2026-11-11 |NAM-010 now covers the segments of telemetry attribute names.
+|0.5.1 |2026-11-14 |Cites STY-004 and STY-005 of the style specification for the names of design tokens.
 |===

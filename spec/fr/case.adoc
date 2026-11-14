@@ -41,7 +41,10 @@ Un groupe communautaire du {abbr-w3c-first} publie ce format.
 Chaque segment du chemin est en kebab-case.
 Le pas d'une échelle peut être un segment numérique, comme dans `color.blue.50`.
 Un chemin de jeton n'est pas un champ {abbr-json}, donc le lowerCamelCase des noms de champs ne s'y applique pas.
+
 La spécification de style de {abbr-fpsot-first} nomme ses jetons de design sous cette forme.
+L'exigence STY-004 de cette spécification fixe ce que dit le nom d'un jeton de base et celui d'un jeton sémantique.
+L'exigence STY-005 tire les mots de chaque nom de jeton de la présente spécification.
 
 Une étiquette Gherkin commence par `@`, et le nom est la partie qui suit.
 Gherkin est le langage des scénarios que décrit la spécification de la {abbr-fpsot} sur les tests.
@@ -109,4 +112,5 @@ Certains langages et certaines bases de données ignorent la casse et liraient c
 |0.3.0 |2026-11-07 |L'exigence NAM-010 couvre maintenant les segments des chemins de jetons de design, et l'exigence NAM-012 permet qu'un tel segment soit un nombre.
 |0.4.0 |2026-11-08 |L'exigence NAM-010 couvre maintenant les étiquettes Gherkin et les noms des fichiers de fonctionnalité Gherkin.
 |0.5.0 |2026-11-11 |L'exigence NAM-010 couvre maintenant les segments des noms d'attributs de télémétrie.
+|0.5.1 |2026-11-14 |Cite les exigences STY-004 et STY-005 de la spécification de style pour les noms des jetons de design.
 |===
