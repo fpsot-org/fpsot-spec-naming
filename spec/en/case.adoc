@@ -21,6 +21,7 @@ One fixed style per context also lets a linter check every name.
 |Code list value or enum value |kebab-case |`not-covered`
 |Segment of an event type |kebab-case, joined by dots |`org.fpsot.registry.asset.transferred`
 |Segment of a telemetry attribute name |snake_case, joined by dots |`org.fpsot.identity.represented_party.id`
+|{abbr-sql-first} table or column name |snake_case |`asset_type`
 |Java or Kotlin package |lower case, joined by dots, no separator |`org.fpsot.datatypes`
 |Maven `groupId` |lower case, joined by dots |`org.fpsot.registry`
 |Maven `artifactId` |kebab-case |`fpsot-registry-core`
@@ -113,4 +114,5 @@ Some languages and databases ignore case, and they would read the two names as o
 |0.4.0 |2026-11-08 |NAM-010 now covers Gherkin tags and Gherkin feature file names.
 |0.5.0 |2026-11-11 |NAM-010 now covers the segments of telemetry attribute names.
 |0.5.1 |2026-11-14 |Cites STY-004 and STY-005 of the style specification for the names of design tokens.
+|0.5.2 |2026-11-21 |NAM-010 now covers the names of {abbr-sql} tables and columns.
 |===

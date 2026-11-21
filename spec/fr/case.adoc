@@ -21,6 +21,7 @@ Un style fixe par contexte permet aussi à un outil de vérification de contrôl
 |Valeur d'une liste de codes ou d'une énumération |kebab-case |`not-covered`
 |Segment d'un type d'événement |kebab-case, joint par des points |`org.fpsot.registry.asset.transferred`
 |Segment d'un nom d'attribut de télémétrie |snake_case, joint par des points |`org.fpsot.identity.represented_party.id`
+|Nom de table ou de colonne {abbr-sql-first} |snake_case |`asset_type`
 |Paquetage Java ou Kotlin |minuscules, jointes par des points, sans séparateur |`org.fpsot.datatypes`
 |`groupId` Maven |minuscules, jointes par des points |`org.fpsot.registry`
 |`artifactId` Maven |kebab-case |`fpsot-registry-core`
@@ -113,4 +114,5 @@ Certains langages et certaines bases de données ignorent la casse et liraient c
 |0.4.0 |2026-11-08 |L'exigence NAM-010 couvre maintenant les étiquettes Gherkin et les noms des fichiers de fonctionnalité Gherkin.
 |0.5.0 |2026-11-11 |L'exigence NAM-010 couvre maintenant les segments des noms d'attributs de télémétrie.
 |0.5.1 |2026-11-14 |Cite les exigences STY-004 et STY-005 de la spécification de style pour les noms des jetons de design.
+|0.5.2 |2026-11-21 |L'exigence NAM-010 couvre maintenant les noms des tables et des colonnes {abbr-sql}.
 |===

@@ -6,6 +6,12 @@ and versions follow [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.h
 
 ## [Unreleased]
 
+## [0.5.2] - 2026-11-21
+
+### Added
+
+- NAM-010 gives snake_case for the names of SQL tables and columns, which the code specification asked for (COD-706).
+
 ## [0.5.1] - 2026-11-14
 
 ### Fixed
