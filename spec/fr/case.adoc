@@ -114,5 +114,5 @@ Certains langages et certaines bases de données ignorent la casse et liraient c
 |0.4.0 |2026-11-08 |L'exigence NAM-010 couvre maintenant les étiquettes Gherkin et les noms des fichiers de fonctionnalité Gherkin.
 |0.5.0 |2026-11-11 |L'exigence NAM-010 couvre maintenant les segments des noms d'attributs de télémétrie.
 |0.5.1 |2026-11-14 |Cite les exigences STY-004 et STY-005 de la spécification de style pour les noms des jetons de design.
-|0.5.2 |2026-11-21 |L'exigence NAM-010 couvre maintenant les noms des tables et des colonnes {abbr-sql}.
+|0.5.2 |2026-11-22 |L'exigence NAM-010 couvre maintenant les noms des tables et des colonnes {abbr-sql}.
 |===
